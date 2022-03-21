@@ -6,20 +6,15 @@
 // то «Ошибка входа»
 
 
-// function security() {
-//     const login = prompt('Введите логин: ');
-//     const password = prompt('Введите пароль: ');
-//     const loginMain = 'admin';
-//     const passwordMain = '123';
-//
-//     if ( login === loginMain && password === passwordMain) {
-//         alert ('Добро пожаловать')
-//     } else {
-//         alert ('Допущена ошибка при вводе! Попробуйте еще раз')
-//     }
-// }
+
+    // const login = prompt('Введите логин: ');
+    // const password = prompt('Введите пароль: ');
+    // const loginMain = 'admin';
+    // const passwordMain = '123';
+    // // alert (login === loginMain && password === passwordMain ? (('Добро пожаловать')) : ('Доступ запрещен'));
+
 // TODO использую тернарный оператор исправь функцию на 1 строку EXAMPLE: const a = 1;const b = 2;console.log(a > b ? a : a < b ? b : 'числа равны')
-// security();
+// Сделано
 
 
 // 2. Задача (Условный оператор)
@@ -139,3 +134,4 @@
 // }
 //
 // schedule();
+
