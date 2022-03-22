@@ -89,7 +89,7 @@ for (let i = 0; i < 10; i++) {
 
   testMoc.push(testArray);
 }
-console.log(testMoc, 'testMoc')
+console.log(testMoc, 'testMoc');
 
 // const test1 = ['123', 'test', 8, 'dildo', 'maramoyka', 'salo', 'rysna ymerla', '99'];
 // ================================================================================== INDEX OF НАХОДИТ ИНДЕКС ЕЛЕМЕНТА В МАССИВЕ
