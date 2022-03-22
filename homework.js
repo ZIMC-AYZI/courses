@@ -1,4 +1,3 @@
-
 // 1. Задача (Условный оператор)
 // Пользователь вводит логин и пароль.
 // Если логин и пароль совпадают с указанными ниже,
@@ -6,12 +5,11 @@
 // то «Ошибка входа»
 
 
-
-    // const login = prompt('Введите логин: ');
-    // const password = prompt('Введите пароль: ');
-    // const loginMain = 'admin';
-    // const passwordMain = '123';
-    // // alert (login === loginMain && password === passwordMain ? (('Добро пожаловать')) : ('Доступ запрещен'));
+// const login = prompt('Введите логин: ');
+// const password = prompt('Введите пароль: ');
+// const loginMain = 'admin';
+// const passwordMain = '123';
+// // alert (login === loginMain && password === passwordMain ? (('Добро пожаловать')) : ('Доступ запрещен'));
 
 // TODO использую тернарный оператор исправь функцию на 1 строку EXAMPLE: const a = 1;const b = 2;console.log(a > b ? a : a < b ? b : 'числа равны')
 // Сделано
@@ -22,19 +20,14 @@
 // лет и если лет больше или равно 16, то пишет – «добро пожаловать»,
 // если нет – «вход воспрещен».
 
-// function security() {
-//     const year = +prompt('Введите Ваш год рождения:');
-//     const age = 2022 - year;
-//
-//     if ( age >= 16 )  {
-//         alert (`Вам ${age} лет! Доступ разрешен!`)
-//     } else {
-//         alert (`Вам ${age} лет! Доступ запрешен!`)
-//     }
-// }
-// TODO использую тернарный оператор исправь функцию на 1 строку EXAMPLE: const a = 1;const b = 2;console.log(a > b ? a : a < b ? b : 'числа равны')
-// security();
 
+// const year = +prompt('Введите Ваш год рождения:');
+// const age = 2022 - year;
+//
+//
+// alert(age >= 16 ? (`Вам ${age} лет! Доступ разрешен!`) : (`Вам ${age} лет! Доступ запрешен!`));
+// TODO использую тернарный оператор исправь функцию на 1 строку EXAMPLE: const a = 1;const b = 2;console.log(a > b ? a : a < b ? b : 'числа равны')
+// Сделано
 
 // 3. Задача (Условный оператор)
 // Создайте программу, которая выводит надбавку за стаж.
@@ -44,32 +37,34 @@
 // over 20 years - 30%
 
 
-// function seniorityaAllowance() {
+
+
+// function seniorityAllowance() {
 //     const yearsExperience = +prompt('Введите Ваш стаж работы:');
 //     const salary = +prompt('Введите Ваш оклад:');
+//     const procent = 0.10
 //
-//      if ( yearsExperience <= 3 )  {
-//       alert (`Вашего стажа недостаточно для надбавки!`)
-//      }     else if ( yearsExperience <=10 )  {
-//         const procent = 0.10 ;
-//         const allowance = salary*procent;
-//         alert (`Ваша надбавка равна : ${allowance} грн!`)
-//      } else if ( yearsExperience <= 20 )  {
-//         const procent = 0.20 ;
-//         const allowance = salary*procent;
-//         alert (`Ваша надбавка равна : ${allowance} грн!`)
+//     if (yearsExperience <3) {
+//         alert(`Вашего стажа недостаточно для надбавки!`)
+//     } else if (yearsExperience >=3 && yearsExperience< 10) {
+//
+//         const allowance = salary * procent;
+//         alert(`Ваша надбавка равна : ${allowance} грн!`)
+//     } else if (yearsExperience >=10 && yearsExperience<=20) {
+//
+//         const allowance = salary * procent * 2;
+//         alert(`Ваша надбавка равна : ${allowance} грн!`)
 //     } else {
-//         const procent = 0.30 ;
-//         const allowance = salary*procent;
-//         alert (`Ваша надбавка равна : ${allowance} грн!`)
+//
+//         const allowance = salary * procent * 3;
+//         alert(`Ваша надбавка равна : ${allowance} грн!`)
 //     }
 // }
-// TODO не нужно в каждом условном блоке создавать новую константу
-// TODO Создай один раз через let и в каждом условном блоке перезаписывай ее
-// seniorityaAllowance();
-
-
-
+//
+// // TODO не нужно в каждом условном блоке создавать новую константу
+// // TODO Создай один раз через let и в каждом условном блоке перезаписывай ее
+// seniorityAllowance();
+//Сделано, шеф! 
 
 //4 Написать программу которая будет склонять слово
 //  “товар” в зависимости от количества товаров в корзине.
