@@ -37,31 +37,33 @@
 // over 20 years - 30%
 
 
-// function seniorityaAllowance() {
-//     const yearsExperience = +prompt('Введите Ваш стаж работы:');
-//     const salary = +prompt('Введите Ваш оклад:');
-//     const procent = 0.10
-//
-//     if (yearsExperience <3) {
-//         alert(`Вашего стажа недостаточно для надбавки!`)
-//     } else if (yearsExperience <= 10) {
-//
-//         const allowance = salary * procent;
-//         alert(`Ваша надбавка равна : ${allowance} грн!`)
-//     } else if (yearsExperience <= 20) {
-//
-//         const allowance = salary * procent * 2;
-//         alert(`Ваша надбавка равна : ${allowance} грн!`)
-//     } else {
-//
-//         const allowance = salary * procent * 3;
-//         alert(`Ваша надбавка равна : ${allowance} грн!`)
-//     }
-// }
+
+
+function seniorityAllowance() {
+    const yearsExperience = +prompt('Введите Ваш стаж работы:');
+    const salary = +prompt('Введите Ваш оклад:');
+    const procent = 0.10
+
+    if (yearsExperience <3) {
+        alert(`Вашего стажа недостаточно для надбавки!`)
+    } else if (yearsExperience >=3 && yearsExperience< 10) {
+
+        const allowance = salary * procent;
+        alert(`Ваша надбавка равна : ${allowance} грн!`)
+    } else if (yearsExperience >=10 && yearsExperience<=20) {
+
+        const allowance = salary * procent * 2;
+        alert(`Ваша надбавка равна : ${allowance} грн!`)
+    } else {
+
+        const allowance = salary * procent * 3;
+        alert(`Ваша надбавка равна : ${allowance} грн!`)
+    }
+}
 
 // TODO не нужно в каждом условном блоке создавать новую константу
 // TODO Создай один раз через let и в каждом условном блоке перезаписывай ее
-// seniorityaAllowance();
+seniorityAllowance();
 //Сделано, шеф! 
 
 //4 Написать программу которая будет склонять слово
