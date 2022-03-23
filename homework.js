@@ -9,7 +9,7 @@
 // const password = prompt('Введите пароль: ');
 // const loginMain = 'admin';
 // const passwordMain = '123';
-// // alert (login === loginMain && password === passwordMain ? (('Добро пожаловать')) : ('Доступ запрещен'));
+// alert (login === loginMain && password === passwordMain ? (('Добро пожаловать')) : ('Доступ запрещен'));
 
 // TODO использую тернарный оператор исправь функцию на 1 строку EXAMPLE: const a = 1;const b = 2;console.log(a > b ? a : a < b ? b : 'числа равны')
 // Сделано
@@ -79,9 +79,9 @@
 //  Делали с помощью Дена.
 // function wordsDeclension() {
 //     const number = +prompt('Введите кол-во товаров в корзине:');
-//     const ten = 10;
+//     // const ten = 10;
 //     const result2 = number % 100; // 11%100 c остатком, получиться тоже самое число
-//     const result = result2 % ten ;
+//     const result = result2 % 10 ;
 //     console.log(result2);
 //     if (result2 >10 && result2 <20) {
 //         alert(`В Вашей корзине ${number} товаров!`)
