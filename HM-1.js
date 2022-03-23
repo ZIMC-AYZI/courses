@@ -172,6 +172,7 @@ let arrForCount = [[1, 2, 3], [4, 5], [6]];
 let res = 0;
 console.log(arrForCount);
 console.log(res); //add res
+console.log(res); //add res
 
 
 
