@@ -77,19 +77,19 @@
 //   //   следующая итерация когда i = 1  и так далее по условию
 // }
 // ================================================================================== СОЗДАНИЕ ДВУМЕРНОГО МАССИВА 2-МЯ ЦИКЛАМИ FOR
-let testMoc = [];
-
-for (let i = 0; i < 10; i++) {
-  const testArray = [];
-
-  for (let j = 0; j < 10; j++) {
-    let el = i === j || j === 9 - i ? 'x' : 0;
-    testArray.push(el);
-  }
-
-  testMoc.push(testArray);
-}
-console.log(testMoc, 'testMoc')
+// let testMoc = [];
+//
+// for (let i = 0; i < 10; i++) {
+//   const testArray = [];
+//
+//   for (let j = 0; j < 10; j++) {
+//     let el = i === j || j === 9 - i ? 'x' : 0;
+//     testArray.push(el);
+//   }
+//
+//   testMoc.push(testArray);
+// }
+// console.log(testMoc, 'testMoc')
 
 // const test1 = ['123', 'test', 8, 'dildo', 'maramoyka', 'salo', 'rysna ymerla', '99'];
 // ================================================================================== INDEX OF НАХОДИТ ИНДЕКС ЕЛЕМЕНТА В МАССИВЕ
@@ -108,3 +108,4 @@ console.log(testMoc, 'testMoc')
 // 7: (10) ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
 // 8: (10) ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
 // 9: (10) ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']
+
