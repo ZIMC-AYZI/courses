@@ -12,6 +12,11 @@ function countOneToForHung() {
 }
 countOneToForHung();*/
 
+// const endNumber = 400;
+// for (let i = 4; i <= endNumber; i++){
+//     console.log(i)
+// }
+
 /*2. Вывести числа в последовательности: 4 7 10 13 с помощью цикла.
 
 function someSequence() {       //sequence - последовательность
@@ -24,6 +29,11 @@ function someSequence() {       //sequence - последовательност�
 }
 someSequence();*/
 
+// const endNumber = 13;
+// for (let i = 4; i <= endNumber; i += 3){
+//     console.log(i)
+// }
+
 /*3. Вывести числа 654 653 652 до нуля
 
 let startNumber = 654;
@@ -34,6 +44,10 @@ function someSequence() {      //sequence - последовательность
     }
 }
 someSequence();*/
+// const endNumber = 0;
+// for (let i = 654; i >= endNumber; i--){
+//     console.log(i)
+// }
 
 /*// 4. Вывести все годы с 1983 до 2017.
 
@@ -58,6 +72,13 @@ function evenNumers() {     ///even - четный
 }
 evenNumers();*/
 
+// const endNumber = 100;
+// for (let i = -4; i <= endNumber; i++){
+//     if (i % 2 === 0){
+//         console.log(i)
+//     }
+// }
+
 /*//6. С помощью цикла напечатайте таблицу умножения на 7 от 1 до 9.
 
 function Multipl() {
@@ -69,9 +90,22 @@ function Multipl() {
 }
 Multipl();*/
 
+// let arrExSeven = [];
+// for (let i = 1; i < 10; i+=6){
+//     let helpArr = [];
+//
+//     for (let j = 0; j < 10; j++){
+//         let one = i * j;
+//         helpArr.push(one)
+//     }
+//     arrExSeven.push(helpArr)
+// }
+//
+// console.log(arrExSeven)
+
 /*7*. Найти сумму чисел от 0 до 100 (включительно). (0+1+2+3+4+5)
 
-const endNumber = 5;
+const endNumber = 100;
 let res = 0;
 function sumNambers() {
     for (let i = 1; i <= endNumber;i++ ){
@@ -91,23 +125,32 @@ for (let i = 1; i <= endNumber; i++){
 }
 console.log(res);*/
 
-/*//9*.  Заполните массив следующим образом: в первый элемент запишите 'x',
- во второй 'xx', в третий 'xxx' и так далее. Длину массива вводить через prompt.
-{
+/*// //9*.  Заполните массив следующим образом: в первый элемент запишите 'x',
+//  во второй 'xx', в третий 'xxx' и так далее. Длину массива вводить через prompt.
     let arrX = [];
     const enterLenght = parseFloat(prompt(`Enter lenght`));
-    for (let i = 1; i <= enterLenght ; ++i){
-        arrX.unshift(`X`)
+    for (let i = 1; i <= enterLenght ; ++i) {
+        arrX.unshift(`x`)
         console.log(arrX);
-    }
-}*/
+    }*/
+
+// let arrX = [];
+// const  enterLength = parseFloat(prompt(`Enter length`));
+// for (let i = 1; i <= enterLength; i++){
+//     let x = '';
+//     for (let j = 1; j <= i; j++){
+//         x = x + 'x';
+//     }
+//     arrX.push(x);
+// }
+// console.log(arrX);
 
 /*// 10*.  Заполните массив следующим образом: в первый элемент запишите '1',
 //  во второй '22', в третий '333' и так далее. Длину массива вводить через prompt.
 
 let arrNumers = [];
 const enterLenght = prompt(`Enter lenght`);
-for (let i = 0; i <= enterLenght; i++){
+for (let i = 1; i <= enterLenght; i++){
     let str = '';
     for (let j = 1; j<= i; j++) {
         str += i;
@@ -116,10 +159,10 @@ for (let i = 0; i <= enterLenght; i++){
     console.log(arrNumers);
 }*/
 
-/*11*. Дан массив с числами.
- Узнайте сколько элементов с начала массива надо сложить
- , чтобы в сумме получилось больше 10-ти.
- let array = [1, 2, 3, 4, 5];
+/*// 11*. Дан массив с числами.
+//  Узнайте сколько элементов с начала массива надо сложить
+//  , чтобы в сумме получилось больше 10-ти.
+//  let array = [1, 2, 3, 4, 5];
 
 let arrCount = [];
 let maxLenght = 15;
@@ -129,13 +172,29 @@ let sum = 1;
 for (let i = 0; i<= maxLenght; i++){
     arrCount.push(Math.round(Math.random() * 10));
     sum += arrCount[i];
-    res = i+1;
+    res += i;
     console.log(`${arrCount} | ${sum} | `);
     if (sum > maxNumber){
         console.log(`нужно сложить ${res} чисел` );
         break;
     }
 }*/
+
+// let arrX = [1, 2, 3, 4, 5];
+// let sum = 0;
+// let count = 0;
+// function NumberCount(arr) {
+//
+//     for (let i = 0; i <= arrX.length; i++){
+//         sum = arrX[i] + sum;
+//         count++;
+//         if (sum > 10){
+//             break;
+//         }
+//     }
+// }
+// NumberCount(arrX);
+// console.log(count);
 
 /*// 12*. Дан массив [1, 2, 3, 4, 5, 6]. Сделать из него массив [2, 1, 4, 3, 6, 5]
 let arrNumbers = [1, 2, 3, 4, 5, 6];
@@ -165,15 +224,22 @@ for (let i = 0; i <= arrNumbers.length; i++){
 }
 console.log(arrSort);*/
 
-//14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
-// Найдите суммуэлементов этого массива.
 
-let arrForCount = [[1, 2, 3], [4, 5], [6]];
-let res = 0;
-console.log(arrForCount);
-console.log(res); //add res
-console.log(res); //add res
 
+/*//16*. нарисовать матрицу (таблица умножения)
+let arrExSeven = [];
+
+for (let i = 1; i <= 10; i++){
+    let helpArr = [];
+
+    for (let j = 1; j <= 10; j++){
+        let one = i*j;
+            helpArr.push(one);
+    }
+    arrExSeven.push(helpArr)
+}
+
+console.log(arrExSeven)*/
 
 
 
