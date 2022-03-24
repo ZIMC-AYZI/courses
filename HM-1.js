@@ -103,17 +103,17 @@ Multipl();*/
 //
 // console.log(arrExSeven)
 
-/*7*. Найти сумму чисел от 0 до 100 (включительно). (0+1+2+3+4+5)
+//7*. Найти сумму чисел от 0 до 100 (включительно). (0+1+2+3+4+5)
 
-const endNumber = 100;
-let res = 0;
-function sumNambers() {
-    for (let i = 1; i <= endNumber;i++ ){
-        res += i;
-    }
-    console.log(res);
-}
-sumNambers();*/
+// const endNumber = 100;
+// let res = 0;
+// function sumNambers() {
+//     for (let i = 0; i <= endNumber;i++ ){
+//         res += i;
+//     }
+//     console.log(res);
+// }
+// sumNambers();
 
 /*//8*. С помощью цикла вывести произведение чисел от 1 до 50. ( 0 умноженный на 1 ,
 // ето число умноженное на 2, это число умноженное на 3 и т.д)
@@ -185,16 +185,20 @@ for (let i = 0; i<= maxLenght; i++){
 // let count = 0;
 // function NumberCount(arr) {
 //
-//     for (let i = 0; i <= arrX.length; i++){
-//         sum = arrX[i] + sum;
+//     for (let i = 0; i <= arr.length; i++){
+//         sum = arr[i] + sum;
 //         count++;
 //         if (sum > 10){
 //             break;
 //         }
+// //================================================================
+// //              не понимаю как вывести 'i' !!!!!!!!!!!!!!!!!!!!!!
+// //================================================================
 //     }
+//     return console.log(count);
 // }
 // NumberCount(arrX);
-// console.log(count);
+
 
 /*// 12*. Дан массив [1, 2, 3, 4, 5, 6]. Сделать из него массив [2, 1, 4, 3, 6, 5]
 let arrNumbers = [1, 2, 3, 4, 5, 6];
@@ -208,6 +212,25 @@ for (let i = 0; i <= arrNumbers.length; i++){
     sortArr.push(firstElem);
 }
 console.log(sortArr);*/
+
+// let arrNum = [1, 2, 3, 4, 5, 6];
+// console.log(arrNum);
+//
+// function SortArr(arr) {
+//     for (let i = 0; i < arr.length; i++){
+//         if (i % 2 === 0){
+//             let plusOne = parseFloat(arr.splice(i,1));
+//             plusOne += 1;
+//             parseFloat(arr.splice(i, 0, plusOne));
+//         }else {
+//             let minusOne = parseFloat((arr.splice(i, 1)));
+//             minusOne -= 1;
+//             parseFloat(arr.splice(i, 0, minusOne))
+//         }
+//     }
+//     return arr;
+// }
+// console.log(SortArr(arrNum));
 
 /*//13*. Дан массив [1, 2, 3, 4, 5, 6]. Сделать из него массив [5, 6, 3, 4, 1, 2]
 
@@ -224,7 +247,58 @@ for (let i = 0; i <= arrNumbers.length; i++){
 }
 console.log(arrSort);*/
 
+// let arrNum = [1, 2, 3, 4, 5, 6];
+// console.log(arrNum);
+//
+// function SortArr(arr) {
+//     arr.reverse()
+//     for (let i = 0; i < arr.length; i++){
+//         if (i % 2 === 0){
+//             let minusOne = parseFloat((arr.splice(i, 1)));
+//             minusOne -= 1;
+//             parseFloat(arr.splice(i, 0, minusOne))
+//         }else {
+//             let plusOne = parseFloat(arr.splice(i,1));
+//             plusOne += 1;
+//             parseFloat(arr.splice(i, 0, plusOne));
+//         }
+//     }
+//     return arr;
+// }
+// console.log(SortArr(arrNum));
 
+/*//14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
+// Найдите сумму элементов этого массива.
+
+let arrCount = [[1, 2, 3],
+               [4, 5],
+               [6]];
+let res = 0;
+for (let i = 0; i < arrCount.length; i++){
+    for (let j = 0; j < arrCount[i].length; j++){
+        res += parseFloat(arrCount[i][j])
+    }
+}
+console.log(res)*/
+
+//15* Написать функцию которая принимает в себя строку ( пример : 'Hello word' ),
+// функция должна вернуть фразу наоборот ( пример : 'drow olleH')
+
+let someArr = prompt(`Enter your phrase`);
+let a = someArr.split('');
+console.log(a, `1111111111`)
+let secondArr = [];
+
+console.log(someArr);
+console.log(`-------------------------`);
+
+for (let i = 0; i <= a.length; i++){
+    let lastElem = a.pop();
+    secondArr.push(lastElem);
+
+}
+console.log(a.length)
+console.log(secondArr);
 
 /*//16*. нарисовать матрицу (таблица умножения)
 let arrExSeven = [];
