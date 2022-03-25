@@ -219,13 +219,13 @@ console.log(sortArr);*/
 // function SortArr(arr) {
 //     for (let i = 0; i < arr.length; i++){
 //         if (i % 2 === 0){
-//             let plusOne = parseFloat(arr.splice(i,1));
+//             let plusOne = arr.splice(i,1);
 //             plusOne += 1;
-//             parseFloat(arr.splice(i, 0, plusOne));
+//             arr.splice(i, 0, plusOne);
 //         }else {
-//             let minusOne = parseFloat((arr.splice(i, 1)));
+//             let minusOne = (arr.splice(i, 1));
 //             minusOne -= 1;
-//             parseFloat(arr.splice(i, 0, minusOne))
+//             arr.splice(i, 0, minusOne);
 //         }
 //     }
 //     return arr;
@@ -254,18 +254,37 @@ console.log(arrSort);*/
 //     arr.reverse()
 //     for (let i = 0; i < arr.length; i++){
 //         if (i % 2 === 0){
-//             let minusOne = parseFloat((arr.splice(i, 1)));
+//             let minusOne = arr.splice(i, 1 );
 //             minusOne -= 1;
-//             parseFloat(arr.splice(i, 0, minusOne))
+//             arr.splice(i, 0, minusOne);
 //         }else {
-//             let plusOne = parseFloat(arr.splice(i,1));
+//             let plusOne = arr.splice(i,1);
 //             plusOne += 1;
-//             parseFloat(arr.splice(i, 0, plusOne));
+//             arr.splice(i, 0, plusOne);
 //         }
 //     }
 //     return arr;
 // }
 // console.log(SortArr(arrNum));
+  //  [5, 6, 3, 4, 1, 2]
+let arrNumber = [1, 2, 3, 4, 5, 6];
+//===================================================
+//          пока что не осили(((
+//===================================================
+
+
+function SortArr(arr) {
+    console.log(arr)
+    for (let i = 0; i <= arr.length; i++){
+        console.log(arr[i+3]);
+        // if ( i % 0 !== 0){
+        //     [arr[i + 2], arr[i]] = [arr[i], arr[i -4]]
+        //         //[arrNum[i - 1], arrNum[i]] = [arrNum[i], arrNum[i - 1]]
+        // }
+    }
+    console.log(arr)
+}
+SortArr(arrNumber);
 
 /*//14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
 // Найдите сумму элементов этого массива.
@@ -281,39 +300,73 @@ for (let i = 0; i < arrCount.length; i++){
 }
 console.log(res)*/
 
-//15* Написать функцию которая принимает в себя строку ( пример : 'Hello word' ),
+/*//15* Написать функцию которая принимает в себя строку ( пример : 'Hello word' ),
 // функция должна вернуть фразу наоборот ( пример : 'drow olleH')
 
 let someArr = prompt(`Enter your phrase`);
-let a = someArr.split('');
-console.log(a, `1111111111`)
-let secondArr = [];
+function PhraseReplace(arr){
+    console.log(arr);
+    let replacedArr = arr.split('');
+    let replaceComplitArr = [];
 
-console.log(someArr);
-console.log(`-------------------------`);
-
-for (let i = 0; i <= a.length; i++){
-    let lastElem = a.pop();
-    secondArr.push(lastElem);
-
-}
-console.log(a.length)
-console.log(secondArr);
-
-/*//16*. нарисовать матрицу (таблица умножения)
-let arrExSeven = [];
-
-for (let i = 1; i <= 10; i++){
-    let helpArr = [];
-
-    for (let j = 1; j <= 10; j++){
-        let one = i*j;
-            helpArr.push(one);
+    for (let i = replacedArr.length; i > 0; i--){
+        let elementReplec = replacedArr.splice(-1,1);
+        replaceComplitArr.push(elementReplec);
     }
-    arrExSeven.push(helpArr)
+    replaceComplitArr = replaceComplitArr.toString();
+    alert(`You entered '${arr}' phrase,
+                    replaced phrase '${replaceComplitArr}'`);
 }
+PhraseReplace(someArr);*/
 
-console.log(arrExSeven)*/
+
+// 15*. нарисовать матрицу x должны быть по краям, 0 в центре.
+// ( длина и высота матрицы не меньше 10 )
+// ['x', 'x', 'x', 'x', 'x' 'x', 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 0, 0, 0, 0, 0, 0, 0, 0, 'x']
+// ['x', 'x', 'x', 'x', 'x', 'x','x']
+
+// let arrVertical = [];
+//
+// for (let i = 0; i < 10; i++){
+//     let arrHorizontal = [];
+//     for (let j = 0; j < 10; j++){
+//         let equalsNull = 0;
+//         if (i === 0 || i === 9 || j === 0 || j === 9){
+//             equalsNull = 'x'
+//         }
+//         arrHorizontal.push(equalsNull);
+//     }
+//     arrVertical.push(arrHorizontal);
+// }
+// console.log(arrVertical);
+
+//16*. нарисовать матрицу (таблица умножения)
+// let arrExSeven = [];
+//
+// for (let i = 1; i <= 10; i++){
+//     let helpArr = [];
+//
+//     for (let j = 1; j <= 10; j++){
+//         let one = i*j;
+//             helpArr.push(one);
+//     }
+//     arrExSeven.push(helpArr)
+// }
+// console.log(arrExSeven)
+
+
+
+
+//console.log(a[a.length-1]) // обращение к последнему индексу
+
 
 
 
