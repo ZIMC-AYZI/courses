@@ -267,24 +267,24 @@ console.log(arrSort);*/
 // }
 // console.log(SortArr(arrNum));
   //  [5, 6, 3, 4, 1, 2]
-let arrNumber = [1, 2, 3, 4, 5, 6];
-//===================================================
-//          пока что не осили(((
-//===================================================
-
-
-function SortArr(arr) {
-    console.log(arr)
-    for (let i = 0; i <= arr.length; i++){
-        console.log(arr[i+3]);
-        // if ( i % 0 !== 0){
-        //     [arr[i + 2], arr[i]] = [arr[i], arr[i -4]]
-        //         //[arrNum[i - 1], arrNum[i]] = [arrNum[i], arrNum[i - 1]]
-        // }
-    }
-    console.log(arr)
-}
-SortArr(arrNumber);
+// let arrNumber = [1, 2, 3, 4, 5, 6];
+// //===================================================
+// //          пока что не осили(((
+// //===================================================
+//
+//
+// function SortArr(arr) {
+//     console.log(arr)
+//     for (let i = 0; i <= arr.length; i++){
+//         console.log(arr[i+3]);
+//         // if ( i % 0 !== 0){
+//         //     [arr[i + 2], arr[i]] = [arr[i], arr[i -4]]
+//         //         //[arrNum[i - 1], arrNum[i]] = [arrNum[i], arrNum[i - 1]]
+//         // }
+//     }
+//     console.log(arr)
+// }
+// SortArr(arrNumber);
 
 /*//14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
 // Найдите сумму элементов этого массива.
@@ -362,11 +362,60 @@ PhraseReplace(someArr);*/
 // }
 // console.log(arrExSeven)
 
+/*//Исправьте ету функцию, она должна выводить то что в коментарии рдом
+// с вызовом функции.
+
+ function printArray(arr) {
+    for (let i=0; i < arr.length; i++){
+        for (let j in arr) {
+            console.log(arr.join());
+
+        }
+    }
+}
+let arr = [[1, 2],
+    [3, 4, 5, 6],
+    [7, 8],
+    [9, 10, 11, 12, 13, 14, 15]
+];
+printArray(arr); //1 2 3 4 5 6, 7, 8 , 9, 10, 11, 12, 13, 14, 15*/
+
+
+// //Написать функцию которая принимает в себя массив и число которое вы хотите удалить из массива
+// // const baseArray = [10,23, 11, 118, 54, 23, 11, 23];
+// //
+// // Пример результата после вызова
+// // findAndRemoveItem(baseArray, 23); // 10, 11, 118, 54, 11]
+//
+// let baseArray = [10,23, 11, 118, 54, 23, 11, 23];
+//  console.log(baseArray);
+// function findAndRemoveItem(arr, numDilate){
+//     for (let i = 0; i <= arr.length; i++){
+//         if ( i === arr.indexOf(numDilate)){
+//             arr.splice(i, 1);
+//         }
+//     }
+//     console.log(arr);
+// }
+// findAndRemoveItem(baseArray, 23);
+
+//Кстати задача парни, написать функцию палиндром
+// , которая принимает в себя строку и проверяет
+// что если слово сделать задом на перед ( перевернуть )
+// то оно выглядит так-же , пример
+// слов redivider, deified, civic, radar, level, rotor, kayak, reviver, racecar, madam, refer.
+// let asd = prompt()
+// function palindrom(str) {
+//
+//     for ( let i = 0; i <= str.length; i++){
+//         if (str[i]  === str[[str.length - 1] - i]){
+//             console.log(`This is palendrom`)
+//         }else {
+//             console.log(`this is not palendrom`)
+//         }
+//     }
 
 
 
-//console.log(a[a.length-1]) // обращение к последнему индексу
-
-
-
-
+}
+palindrom(asd)
