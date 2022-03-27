@@ -182,20 +182,16 @@ for (let i = 0; i<= maxLenght; i++){
 
 // let arrX = [1, 2, 3, 4, 5];
 // let sum = 0;
-// let count = 0;
 // function NumberCount(arr) {
 //
-//     for (let i = 0; i <= arr.length; i++){
+//     for (let i = 1; i <= arr.length; i++){
 //         sum = arr[i] + sum;
-//         count++;
-//         if (sum > 10){
+//         if (sum > 10 && sum < 11){
 //             break;
 //         }
-// //================================================================
-// //              не понимаю как вывести 'i' !!!!!!!!!!!!!!!!!!!!!!
-// //================================================================
+//         console.log(i);
 //     }
-//     return console.log(count);
+//
 // }
 // NumberCount(arrX);
 
@@ -219,7 +215,7 @@ console.log(sortArr);*/
 // function SortArr(arr) {
 //     for (let i = 0; i < arr.length; i++){
 //         if (i % 2 === 0){
-//             let plusOne = arr.splice(i,1);
+//             let plusOne = parseFloat(arr.splice(i,1));
 //             plusOne += 1;
 //             arr.splice(i, 0, plusOne);
 //         }else {
@@ -247,6 +243,8 @@ for (let i = 0; i <= arrNumbers.length; i++){
 }
 console.log(arrSort);*/
 
+
+// //14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
 // let arrNum = [1, 2, 3, 4, 5, 6];
 // console.log(arrNum);
 //
@@ -266,28 +264,25 @@ console.log(arrSort);*/
 //     return arr;
 // }
 // console.log(SortArr(arrNum));
-  //  [5, 6, 3, 4, 1, 2]
-// let arrNumber = [1, 2, 3, 4, 5, 6];
-// //===================================================
-// //          пока что не осили(((
-// //===================================================
-//
-//
+
+
+//  let arrNumber = [1, 2, 3, 4, 5, 6];
 // function SortArr(arr) {
-//     console.log(arr)
-//     for (let i = 0; i <= arr.length; i++){
-//         console.log(arr[i+3]);
-//         // if ( i % 0 !== 0){
-//         //     [arr[i + 2], arr[i]] = [arr[i], arr[i -4]]
-//         //         //[arrNum[i - 1], arrNum[i]] = [arrNum[i], arrNum[i - 1]]
-//         // }
+//     console.log(arr);
+//     // for (let i = 0; i < arr.length; i++){
+//     //         if (arr[i] % 2 === 0){
+//     //             [arr[i - 1], [arr[i]] = [arr[i], arr[i - 1]]
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 === 0) {
+//             [arr[i - 1], arr[i]] = [arr[i], arr[i - 1]]
+//         }
 //     }
+//     arr.reverse();
 //     console.log(arr)
 // }
 // SortArr(arrNumber);
 
-/*//14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]].
-// Найдите сумму элементов этого массива.
+/*// Найдите сумму элементов этого массива.
 
 let arrCount = [[1, 2, 3],
                [4, 5],
@@ -408,14 +403,11 @@ printArray(arr); //1 2 3 4 5 6, 7, 8 , 9, 10, 11, 12, 13, 14, 15*/
 // function palindrom(str) {
 //
 //     for ( let i = 0; i <= str.length; i++){
-//         if (str[i]  === str[[str.length - 1] - i]){
+//         if (str[i]  === str[str.length - 1 - i]){
 //             console.log(`This is palendrom`)
 //         }else {
 //             console.log(`this is not palendrom`)
 //         }
 //     }
-
-
-
-}
-palindrom(asd)
+// }
+// palindrom(asd)
