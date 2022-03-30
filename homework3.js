@@ -269,7 +269,7 @@
 //     for (let j = 1; j <= 10; j++) {
 //
 //
-//         multiplicationTableSecondNumber.push((`${i * j}`));
+//         multiplicationTableSecondNumber.push((`${i} * ${j} = ${i * j}`));
 //     }
 //     multiplicationTableFirstNumber.push(multiplicationTableSecondNumber);
 // }
