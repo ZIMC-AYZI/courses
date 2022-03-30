@@ -238,3 +238,5 @@
 // let arr = [1, 3, 'Hello my name is dick', 5];
 //
 // console.log(inArray(text, arr));
+//
+//
