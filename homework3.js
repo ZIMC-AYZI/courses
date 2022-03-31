@@ -144,9 +144,9 @@
 
 
 // 12*. Дан массив [1, 2, 3, 4, 5, 6]. Сделать из него массив [2, 1, 4, 3, 6, 5] (done)
-
+//
 // let arr = [1, 2, 3, 4, 5, 6];
-// for (let i = 0; i <= 5; i+=2) {
+// for (let i = 0; i <= arr.length-1; i += 2) {
 //     let x = arr[i];
 //     arr[i] = arr [i + 1];
 //     arr[i + 1] = x;
@@ -169,12 +169,32 @@
 // 13*. Дан массив [1, 2, 3, 4, 5, 6]. Сделать из него массив [5, 6, 3, 4, 1, 2] (done)
 // let arr = [1, 2, 3, 4, 5, 6];
 //
-// for (let i = 0; i <= 1; i++) {
+// for (let i = 0; i <= arr.length-1; i+=2) {
 //     let x = arr[i];
-//     arr[i] = arr [i + 4];
-//     arr[i + 4] = x;
+//     arr[i] = arr [i + 1];
+//     arr[i + 1] = x;
+//     let reverse = [];
+//     for (let j = arr.length-1; j >= 0; j--) {
+//         reverse[j] = arr[(arr.length - 1) - j];
+//
+//
+//     }
+//     arr = reverse;
+//
+//
 // }
 // console.log(arr);
+// console.log(reverse);
+
+// function newReverse (x){
+//     let a = [];
+//     for (j = 0; j < x.length; j++){
+//         a[i] = x[(x.length - 1) - j]
+//     }
+//     return a
+// }
+
+// console.log(reverse);
 
 // x = arr[0];
 // arr[0] = arr [4];
@@ -185,18 +205,23 @@
 // console.log(arr);
 
 
-// 14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]]. Найдите сумму (done)
+// 14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]]. Найдите сумму (done) (Я НЕ ПОНИМАЮ, КАК ЗАКОНСОЛИТЬ СУММУ ПОСЛЕДНЮЮ)
 // элементов этого массива. (done)
 
 // let arr = [[2, 3, 3], [5, 5], [6]];
-// let arrConcat = arr[0].concat(arr[1], arr[2]);
 // let sum = 0;
-// for (let i = 0; i <= arrConcat.length - 1; i++) {
-//     sum += arrConcat[i];
+// for (let i = 0; i <= arr.length+1; i++ ) {
+//     let partOfMassive = arr[i];
+//
+//     for (j = 0; j <= partOfMassive.length-1; j++) {
+//        sum += partOfMassive [j] ;
+//
+//
+//
+//     }
+// console.log(sum);
 //
 // }
-//
-// console.log(sum);
 
 
 // 15* Написать функцию которая принимает в себя строку ( пример : 'Hello word' ) , функция должна вернуть фразу
@@ -208,17 +233,12 @@
 //
 //     let newMessage = '';
 //     for (let i = str.length - 1; i >= 0; i--) {
-//
 //         newMessage += str[i];
-//
 //     }
-//
-//     alert(newMessage);
-//
-//
+//     return newMessage;
 // }
 //
-// reverse('Hello word');
+// alert(reverse('Hello word'));
 
 
 // 16*. нарисовать матрицу x должны быть по краям, 0 в центре. ( длина и высота матрицы не меньше 10 ) (done)
@@ -247,7 +267,6 @@
 //     pictureOut.push(pictureIn);
 // }
 // console.log(pictureOut);
-
 
 
 // 17*. нарисовать матрицу (таблица умножения) (done)
