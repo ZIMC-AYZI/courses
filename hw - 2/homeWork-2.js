@@ -1,62 +1,52 @@
 'use strict'
-console.log('i white new exercises')
 
-//Написать функцию которая первым принимает значение,
+/*//Написать функцию которая первым принимает значение,
 // которым заполнять массив, а вторым - сколько элементов должно быть в массиве.
 // Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
 
-/*function fillArr(symOrNum, numOfNum) {
-    let arr = [];
-    let numCount = 3;
-    symOrNum = prompt(`Which symbol or number
-                                do you want to fill?`);
-    numOfNum = parseFloat(prompt(`How match symbol or number
-                                do you want to fill?`));
-    while (numCount > 0){
-
-        if (numOfNum !== isNaN(Number)){
-            alert(`it not a number`)
-            numOfNum = parseFloat(prompt(`Enter number, yuo can try ${numCount} more time`))
-            numCount--;
-        }
-        for (let i = 0; i <= numOfNum; i++){
+function fillArr(symOrNum, numOfNum) {
+        let arr = [];
+        for (let i = 1; i <= numOfNum; i++){
             arr.push(symOrNum);
         }
-    }
-    return alert(arr)
+        return arr;
 }
 
-fillArr();*/
+console.log(fillArr('x', 5));*/
 
-/*//Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]].
+//Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]].
 // Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
 
-function ArrItemsSum(arr) {
-    let multiArr = 3;
-    let startCounNum = 0;
-    let res = arr.flat(multiArr)
-                 .reduce((sum, item) => sum + item, startCounNum);
-    console.log(res);
-}
-ArrItemsSum([[[1, 2], [3, 4]], [[5, 6], [7, 8]]]);*/
+// function arrItemsSum(arr) {
+//     let multiArr = 3;
+//     let startCounNum = 0;
+//     let res = arr.flat(multiArr)
+//                  .reduce((sum, item) => sum + item, startCounNum);
+//     console.log(res);
+// }
+// ArrItemsSum([[[1, 2], [3, 4]], [[5, 6], [7, 8]]]);
 
-/*//Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет,
+// function arrItemsSum(arr){
+//     let res = 0;
+//     for (let i = 0; i <= arr.length; i++){
+//         for (let j = 0; j <= arr[i].length; j++){
+//             for (let a = 0; a < = arr[i][j].length; a++){
+//                 res += arr[i][j][a];
+//             }
+//         }
+//     }
+//     return res;
+// }
+
+//Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет,
 // что оно больше нуля и меньше 10.
 // Если это так - пусть функция возвращает true, если не так - false.
 
-function isNumberInRange(num) {
-    num = parseFloat(prompt(`Enter number`))
-    if (num > 0 && num < 10){
-        return true;
-    }else {
-        return false;
-    }
-}
+// function isNumberInRange(num) {
+//     return  num > 0 && num < 10}
+// console.log(isNumberInRange(11));
 
-console.log(isNumberInRange());*/
-
-/*
-//Сделайте функцию isEven() (even - это четный),
+/*//Сделайте функцию isEven() (even - это четный),
 // которая параметром принимает целое число и проверяет:
 // четное оно или нет.
 // Если четное - пусть функция возвращает true, если нечетное - false.
@@ -69,7 +59,13 @@ console.log(isEven());
 // Для этого используйте вспомогательную функцию isEven из предыдущей задачи
 
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let evenArr = arr.filter(elem => isEven(elem))
+let evenArr = [];
+//let evenArr = arr.filter(elem => isEven(elem))
+for (let i = 0; i <= arr.length; i++){
+    if (isEven(arr[i])){
+        evenArr.push(arr[i])
+    }
+}
 console.log(evenArr)*/
 
 
@@ -84,7 +80,7 @@ function getDivisors(num) {
              arr.push(i)
          }
      }
-    return console.log(arr);
+    return arr;
 }
 
 console.log(getDivisors(20));*/
@@ -95,56 +91,49 @@ console.log(getDivisors(20));*/
 
 function exponen(num, expon) {console.log(num ** expon)}
 exponen(10, 3)*/
+//const exponen1 = (num, expon) => console.log(num ** expon)
 
-/*
-//8) Функция принимает параметр - возраст пользователя.
+
+/*//8) Функция принимает параметр - возраст пользователя.
 // Если число больше 16 – то выводим «добро пожаловать»,
 // если меньше – “вы еще молоды”.
 
 function agePass(age) {
     const currentAge = 16;
-    if (age > currentAge) return console.log(`добро пожаловать`)
-    else return console.log(`вы еще молоды`)
+    return age > currentAge ? (`добро пожаловать`) : `вы еще молоды`
+
 }
 
-console.log(agePass(+prompt()))*/
+console.log(agePass(2))*/
 
 /*//9) Модифицируйте предыдущий пример – учтите вариант, если пользователь не передал
 // параметр в функцию.таком случае выведите сообщение – “Введите возраст”.
 // Реализуйте два вида проверки наличия аргумента – проверка на undefined
-// и оператор ||.
 
 function agePass(age) {
-    //age = prompt(`Enter your age`)
-
     const currentAge = 16;
-    if (age === undefined) {
-        alert(`enter your age by numbers`)
-    }else if (age > currentAge) {
-        return console.log(`добро пожаловать`)
-    }else return console.log(`вы еще молоды`)
-
+    // if (age === undefined) {
+    //     alert(`enter your age by numbers`)
+    // }else if (age > currentAge) {
+    //     return console.log(`добро пожаловать`)
+    // }else return console.log(`вы еще молоды`)
+    return age !== undefined ? age > currentAge ? `добро пожаловать`: `вы еще молоды`: 'Введите возраст';
 }
+//-------------------------нет варианта с ||
+// ---------------- спросил про єту проверку в групе, сказали что єто опечатка
 let a = 'asd'
 let b;
 let v = 17;
 let c = 15;
-agePass(c)*/
+console.log(agePass(b));*/
 
-/*
-//10) Создайте функцию, которая считает длину массива и возвращает ее в виде числа.
+/*//10) Создайте функцию, которая считает длину массива и возвращает ее в виде числа.
 //Массив в функцию передается как аргумент.
 // Если аргумент не задан – выводится сообщение об ошибке.
 
 function arrLength(arr) {
-    let res = -1;
-    if (arr !== undefined)
-    {for (let index in arr){
-        res++
-    }
-        return res ;}
-    else {
-        console.log(`Error`)}
+
+    return arr !== undefined ? parseInt(arr.length) : " Error";
 }
 console.log(arrLength());*/
 
@@ -154,85 +143,110 @@ console.log(arrLength());*/
 // Если 8, 9 – то возвращает соответственно 7 или 8.
 // Реализуйте решение с несколькими return.
 
+let enterNum = parseInt(prompt(`Enter number`))
 function sortingSomeNumbers(num) {
-    num = parseInt(prompt(`Enter number`))
+
     if (num < 7) {
         return console.log(`your number less than 7`)
-    } else if (num === 8) {
-       return  7
-    } else if (num === 9) {
-       return  8
+    } else if (num === 8 || num === 9) {
+       return  num - 1;
     } else if (num > 10){
         return (num ** 2)}
-
 }
-console.log(sortingSomeNumbers())*/
+console.log(sortingSomeNumbers(enterNum))*/
 
-/*
-//12) Дана строка. Сделайте заглавным первый символ каждого слова этой строки.
+/*//12) Дана строка. Сделайте заглавным первый символ каждого слова этой строки.
 // Для этого сделайте вспомогательную функцию ucfirst,
 // которая будет получать строку,делать первый символ этой строки
 // заглавным и возвращать обратно строку с заглавной первой буквой.
 
-function usFirst(str) {
-    //console.log(typeof str);
-    let res = str[0].toUpperCase() + str.slice(1)
-    return res;
+function usFirst(stri) {
+    if (!stri) return stri;
+
+    return stri[0].toUpperCase() + stri.slice(1)
+
 }
 
+console.log(usFirst('pety'))
 let someArr = prompt(`enter you sentence`)
 function toUpperEveryWord(str) {
     let arr = [];
     str =  str.split(' ');
 
-    str.forEach(function (item) {
-        arr.push(usFirst(item));
+    for (let i = 0; i <= str.length; i++){
 
-    })
-    return arr.join();
+        arr.push(usFirst(str[i]));
+    }
+    arr = arr.join(' ');
+    return arr;
 }
-console.log(toUpperEveryWord(someArr))*/
 
-/*
-//13) Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+console.log(toUpperEveryWord(someArr));*/
+
+/*//13) Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
 // ( с помощью функции, которая принимает строку)
 
 let str = 'var_text_hello';
 
 function usFirst(str) {
-    let res = str[0].toUpperCase() + str.slice(1)
-    return res;
+    if (!str) return str;
+    return str[0].toUpperCase() + str.slice(1)
+
 }
 
 function someSort(str) {
     let arr = [];
     str = str.split('_');
-    console.log(str)
-    str.forEach(function (item, index) {
-        if (index === 0){
-            arr.push(item)
+    console.log(str);
+    for (let i = 0; i <= str.length; i++){
+        if (i === 0){
+            arr.push(str[i])
         }else {
-            arr.push(usFirst(item))
+            arr.push(usFirst(str[i]))
         }
-    })
+    }
+
     str = arr.join('')
     return str;
 }
 console.log(someSort(str))*/
 
-/*
-// 14) Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
+/*// 14) Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет.
 //     Функция первым параметром должна принимать текст элемента, а вторым - массив,
 //     в котором делается поиск. Функция должна возвращать true или false.
 
 function inArray(txtElem, arr) {
-    let a = txtElem;
-    let b = arr;
-    for (let i = 0; i <= b.length; i++){
-        if (b[i].includes(a)){
+    let text = txtElem;
+    console.log(arr[arr.length - 1])
+    for (let i = 0; i <= arr.length; i++) {
+        if (arr[i].includes(text)) {
             return true
-        }else { return false}
+        } else if (!arr[arr.length - 1].includes(txtElem)) {
+            return false
+        }
+
     }
 }
+console.log(inArray(123, ['asd ', '2133 ada', 'qweqsd', 'qweqe']));*/
 
-console.log(inArray('sumic',['123 suqeqmiqceqessumic', 1, {2: 'sumic'}, '   sqeqeueeqemiqweca' ]))*/
+/*
+//15) Дана строка, например, '123456'. Сделайте из нее '214365'.
+
+function sortArr(strOfNumbers) {
+    strOfNumbers = strOfNumbers.split('')
+    for (let i = 0; i <= strOfNumbers.length; i++){
+        if (strOfNumbers[i] % 2 === 0) {
+            [strOfNumbers[i - 1], strOfNumbers[i]] = [strOfNumbers[i], strOfNumbers[i - 1]]}
+    }
+    strOfNumbers = strOfNumbers.join('')
+    return strOfNumbers;
+}
+
+console.log(sortArr('123456'))*/
+
+// 16) Напиши функцию создания генератора sequence(start, step). Она при вызове возвращает другую функцию-генератор,
+// которая при каждом вызове дает число на 1 больше, и так до бесконечности.
+// Начальное число, с которого начинать отсчет, и шаг, задается при создании генератора.
+// Шаг можно не указывать, тогда он будет равен одному.
+// Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.
+
