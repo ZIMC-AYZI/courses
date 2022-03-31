@@ -4,10 +4,8 @@
 //
 // function arrayFill(x, number) {
 //     let array = [];
-//     let str = '';
 //
 //     for(let i = 0; i < number; i++) {
-//         str += x;
 //         array.push(x)
 //     }
 //     console.log(array)
@@ -57,14 +55,10 @@
 // целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
 //
 // function isEven(number) {
-//     if (number % 2 === 0) {
-//         console.log(true)
-//     } else {
-//         console.log(false)
-//     }
+//     return number % 2 === 0
 // }
 //
-// isEven(6);
+// console.log(isEven());
 
 
 // 5) Дан массив с целыми числами. Создайте из него новый массив,
@@ -72,12 +66,11 @@
 //
 // let testArray = [1, 2, 3, 4, 5, 6, 7, 8];
 // let newArray = [];
-//
 // function check(arr) {
 //
 //     for (let i = 1; i < arr.length; i ++) {
-//         if (i % 2 === 0) {
-//             newArray.push(i)
+//         if (isEven(arr[i])) {
+//             newArray.push(arr[i])
 //         } else {
 //
 //         }
@@ -97,8 +90,6 @@
 //     for (let i = number; i < 100; i++) {
 //         if (i % number === 0) {
 //             array.push(i)
-//         } else {
-//
 //         }
 //     }
 //     console.log(array)
@@ -156,19 +147,20 @@
 // function arraySum(arr) {
 //     let number = 0;
 //
+//     if (arr === undefined) {
+//         console.log('Ошибка');
+//         return
+//     }
+//
 //     for (let item of arr) {
 //         number = +item
 //     }
 //
-//     if (arr === undefined) {
-//         console.log('Ошибка')
-//     } else {
-//         console.log(number)
-//     }
+//     return number
+//
 // }
 //
-// arraySum(array);
-
+// console.log(arraySum(array));
 
 // 11) Пользователь вводит числа. Если число больше 10, то функция возвращает квадрат числа,
 // если меньше 7 – пишет, что число меньше 7. Если 8, 9 – то возвращает соответственно 7 или 8.
@@ -193,14 +185,20 @@
 // Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку,
 // делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой.
 //
-// function ucfirst(string) {
-//     if (!string) return console.log('Введите данные');
-//
-//     return console.log(string[0].toUpperCase() + string.slice(1));
-//
+// function ucfirst(str) {
+//     return str[0].toUpperCase() + str.substr(1)
 // }
 //
-// ucfirst('стасик');
+// let str = 'привет я стас';
+// let arr = str.split(' ');
+//
+// for (let i = 0; i < arr.length; i++) {
+//     arr[i] = ucfirst(arr[i]);
+// }
+//
+// str = arr.join(' ');
+//
+// console.log(str);
 
 
 // 13) Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'. ( с помощью функции, которая принимает строку)
@@ -225,6 +223,7 @@
 // в котором делается поиск. Функция должна возвращать true или false.
 //
 // function inArray(text, arr) {
+//     const reg = new RegExp(text);
 //
 //     for (let el of arr) {
 //         if (el.match(text)) {
@@ -235,8 +234,117 @@
 // }
 //
 // let text = 'dick';
-// let arr = [1, 3, 'Hello my name is dick', 5];
+// let arr = ['asd', 'array', 'Hello my name is dick', 'cancel'];
 //
 // console.log(inArray(text, arr));
+
+
+// 15) Дана строка, например, '123456'. Сделайте из нее '214365'.
 //
+// let text = '123456';
+// let splitted = text.split('');
 //
+// function sort(arr) {
+//     let arr2 = [];
+//
+//     for (let i = 0; i < arr.length; i += 2) {
+//         arr2.push(arr[i + 1], arr[i])
+//     }
+//     return arr2
+// }
+//
+// let ready = sort(splitted).join('');
+//
+// console.log(ready);
+
+
+// 16) Напиши функцию создания генератора sequence(start, step). Она при вызове возвращает другую функцию-генератор,
+//  которая при каждом вызове дает число на 1 больше, и так до бесконечности.
+//  Начальное число, с которого начинать отсчет, и шаг, задается при создании генератора.
+// Шаг можно не указывать, тогда он будет равен одному.
+//  Начальное значение по умолчанию равно 0. Генераторов можно создать сколько угодно.
+//
+// function sequence(start = 0, step = 1) {
+//     start -= step;
+//
+//     return function generator() {
+//         return start += step;
+//     }
+// }
+//
+// let work = sequence(5,5);
+// console.log(work());
+// console.log(work());
+// console.log(work());
+
+
+// 17) Также, нужна функция take(gen, x)
+// которая вызывает функцию gen заданное число (x) раз и возвращает массив с результатами вызовов.
+// (первый аргумент ето наша функция генератор с 16 задачи, второй кол-во раз для вызова )
+//
+// function take(gen, x) {
+//     let work = gen;
+//     let arr = [];
+//
+//     for (let i = 0; i < x; i++) {
+//         arr.push(work())
+//     }
+//
+//     return arr
+// }
+//
+// console.log(take(sequence(2,5), 5));
+
+
+// 18) Напиши функцию map(fn, array), которая принимает на вход функцию и массив,
+//  и обрабатывает каждый элемент массива этой функцией, возвращая новый массив.
+//
+// function map(fn, array) {
+//     let ready = [];
+//
+//     for (let i = 0; i < array.length; i++) {
+//         ready.push(numplus(array[i]))
+//     }
+//
+//     return ready
+//
+// }
+//
+// function numplus(x) {
+//     return x * x
+// }
+//
+// console.log(map(numplus(), [2, 3, 5]));
+
+
+// 19) Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen,
+//  где gen — функция-генератор вроде той, что была в 17 задании.
+// fmap возвращает новую функцию-генератор,
+// которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a.
+//
+// function gen() {
+//     let number = 0;
+//
+//     return function () {
+//         return ++number;
+//     }
+// }
+//
+// function plus(num) {
+//     return num + num;
+// }
+//
+// function fmap(a, gen) {
+//     const gen1 = gen();
+//
+//     return function () {
+//         return a(gen1());
+//     }
+// }
+//
+// const fmap1 = fmap(plus, gen);
+//
+// console.log(fmap1());
+// console.log(fmap1());
+// console.log(fmap1());
+// console.log(fmap1());
