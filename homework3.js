@@ -205,24 +205,29 @@
 // console.log(arr);
 
 
-// 14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]]. Найдите сумму (done) (Я НЕ ПОНИМАЮ, КАК ЗАКОНСОЛИТЬ СУММУ ПОСЛЕДНЮЮ)
+// 14*. Дан двухмерный массив с числами, [[1, 2, 3], [4, 5], [6]]. Найдите сумму (done)
 // элементов этого массива. (done)
 
-// let arr = [[2, 3, 3], [5, 5], [6]];
-// let sum = 0;
-// for (let i = 0; i <= arr.length+1; i++ ) {
-//     let partOfMassive = arr[i];
-//
-//     for (j = 0; j <= partOfMassive.length-1; j++) {
-//        sum += partOfMassive [j] ;
-//
-//
-//
-//     }
-// console.log(sum);
-//
-// }
 
+
+let arr = [[2, 3, 3], [5, 5], [6]];
+
+function arrSum(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            sum += array[i][j];
+            // console.log();
+
+
+        }
+
+
+    }
+    console.log(sum);
+}
+
+arrSum(arr);
 
 // 15* Написать функцию которая принимает в себя строку ( пример : 'Hello word' ) , функция должна вернуть фразу
 // наоборот ( пример : 'drow olleH') (done)
