@@ -112,6 +112,14 @@
 // console.log(exponentiation(2,4));
 // alert(exponentiation(+prompt('введите число:'),+prompt('введите степень:')));
 
+// function exponentiation(x, degree) {
+//
+//     return x**degree;
+//
+// }
+// console.log(exponentiation(2,4));
+// alert(exponentiation(+prompt('введите число:'),+prompt('введите степень:')));
+
 
 //
 // 8) Функция принимает параметр - возраст пользователя.
@@ -338,23 +346,30 @@
 //     fmap возвращает новую функцию-генератор,
 //     которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a.
 
-function* sequence(start = 0, step = 1) {
-    while (true)
-        yield start += step
+function sequence(start = 0, step = 1) {
+    return function () {
+        return start += step
+
+    }
+
+
 }
+
 const gen = sequence(0, 1);
+
 function a(x) {
     return x + x;
 }
+
 let sum = fmap(a, gen);
 
 function fmap(a, gen) {
-    return function* g() {
-        yield a(gen.next().value)
+    return function () {
+        return a(gen());
     }
 }
 
-console.log(sum().next().value);
-console.log(sum().next().value);
-console.log(sum().next().value);
-console.log(sum().next().value);
+console.log(sum());
+console.log(sum());
+console.log(sum());
+console.log(sum());
