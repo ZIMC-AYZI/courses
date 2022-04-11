@@ -295,27 +295,5 @@ console.log(map(mult, arr))*/
 // 19) Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen,
 // где gen — функция-генератор вроде той, что была в 17 задании.
 // fmap возвращает новую функцию-генератор,
-// которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a.
-
-function sequence(start = 0 , step = 1) {
-    return  function () {
-        return start += step;
-    }
-}
-
-function mult(x) {return x * x;};
-
-function fmap(a, gen) {
-    let use = gen;
-    return function () {
-        return a(use());
-    }
-}
-
-let someGener =  sequence(2,2);
-let result = fmap(mult, someGener)
-console.log(result());
-console.log(result());
-console.log(result());
-console.log(result());
+// которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a.B
 
