@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /*
 // 1. Написать функцию которая выводит на ваше усмотрение
@@ -62,6 +62,20 @@ function sortingArr(arr, arrSize, increaseOrDescending = 1) {
     return arr;
 }
 */
+// function sortingArr(arr, arrSize, increaseOrDescending = 1) {
+//     arr.splice(arrSize,);
+//     for (let i = 0; i <= arrSize; i++) {
+//         for (let j = 0; j <= arr.length; j++) {
+//
+//           if( increaseOrDescending === 1 ? arr[j] < arr[j + 1] : arr[j] > arr[j + 1]) {
+//               [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+//           }
+//         }
+//     }
+//     return arr;
+// }
+//
+// console.log(sortingArr([4, 26, -2, 3, -289, 1], 6, 0));
 
 /*//3 сколько различных чисел в заданном массиве
 // example: const testArr = [1,1,2,3,4,4]
@@ -77,6 +91,24 @@ function sortArr(arr) {
      }
     return count;
 }*/
+// const testArr = [1,1,2,3,4,4,]
+// /////////////////       вот такой масив уже работает не корректно
+// //                                            [1,1,2,3,4,4,4]
+// ////////////////        в этом весь ступор
+//
+// function sortArr(arr) {
+//     let count = 0;
+//      for (let i = 0; i <= arr.length; i++) {
+//         for (let j = i + 1; j <= arr.length; i++) {
+//             if (arr[i] === arr[j]) {
+//                 count++;
+//                 break;
+//             }
+//         }
+//     }
+//     return count;
+// }
+// console.log(sortArr(testArr))
 
 /*//4 третий массив есть пересечение двух заданых (совпадения чисел в 1 и 2 массиве)
 // example:
@@ -115,15 +147,41 @@ function sortingArr(firstArr, secondArr) {
 
 console.log(sortingArr(testArr1, testArr2));*/
 
-/*// 6 все ли эллементы массива различны ( Вернет true или false )
-function defOrSameArr(arr) {
-        for (let i = 0; i <= arr.length; i++){
-            if (i === arr.indexOf(arr[i])){
-                return false;
-            }
-        }
-        return true;
-}*/
+// function sortingArr(firstArr, secondArr) {
+
+//     for (let i = 0; i < firstArr.length; i++) {
+//
+//         for (let j = 0; j < secondArr.length; j++) {
+//             if (firstArr[i] === (secondArr[j])) {
+//                 secondArr.splice(j,1)
+//                 break
+//             }
+//         }
+//     }
+//     firstArr = [...firstArr, ...secondArr];
+//     return firstArr;
+// }
+
+// /*// 6 все ли эллементы массива различны ( Вернет true или false )
+// function defOrSameArr(arr) {
+//         for (let i = 0; i <= arr.length; i++){
+//             if (i === arr.indexOf(arr[i])){
+//                 return false;
+//             }
+//         }
+//         return true;
+// }*/
+//
+// function defOrSameArr(arr) {
+//     for (let i = 0; i <= arr.length; i++){
+//         for (let j = i + 1; j <= arr.length; j++){
+//             if (arr[i] === arr[j]){
+//                 return false;
+//             }
+//         }
+//     }
+//     return true;
+
 
 /*// 7 индекс последнего минимального значения ( вернет индекс ( минимального числа ))
 function lastMinIndex(arr) {
@@ -161,70 +219,74 @@ function camperArrSameElement(firstArr, secondArr) {
 // потомком класса ДОМ ( extend ) с новыми полями ( бассейн, гараж )
 // 9.4 Класс пентхаус должен иметь свой метод открыть/закрыть гараж
 
-// class Home {
-//     constructor(option){    //(livingRoomWindow, kitchenWindow,badRoomWindow,
-//                     //, livingRoomDoor, bathRoomDoor) {
-//         this.livingRoomWindow = option.livingRoomWindow;
-//         this.kitchenWindow = option.kitchenWindow;
-//         this.badRoomWindow = option.badRoomWindow;
-//         this.toiletDoor = option.toiletDoor;
-//         this.livingRoomDoor = option.livingRoomDoor;
-//         this.bathRoomDoor = option.bathRoomDoor;
-//     }
-//
-//     set changeWindowColor(newWindowColor){
-//         this.livingRoomWindow = newWindowColor;
-//         this.kitchenWindow = newWindowColor;
-//         this.badRoomWindow = newWindowColor;
-//     }
-//
-//     set changeDoorColor(newDoorColor){
-//         this.toiletDoor = newDoorColor;
-//         this.livingRoomDoor = newDoorColor;
-//         this.bathRoomDoor = newDoorColor;
-//     }
-//
-//     set changeDoorsAndWindowsColors(newDoorsAndWindowsColors){
-//
-//         this.livingRoomWindow = newDoorsAndWindowsColors;
-//         this.kitchenWindow = newDoorsAndWindowsColors;
-//         this.badRoomWindow = newDoorsAndWindowsColors;
-//         this.toiletDoor = newDoorsAndWindowsColors;
-//         this.livingRoomDoor = newDoorsAndWindowsColors;
-//         this.bathRoomDoor = newDoorsAndWindowsColors;
-//     }
-//
-//     get returnWindowColor(){
-//         const colorWindowsInfo = {
-//             livingRoomWindow: `livingRoomWindow color is ${this.livingRoomWindow}`,
-//             kitchenWindow: `kitchenWindow color is ${this.kitchenWindow}`,
-//             badRoomWindow: `badRoomWindow color is ${this.badRoomWindow}`
-//         };
-//         return colorWindowsInfo;
-//     }
-//
-//     get rwturnDoorColor(){
-//         const colorDoorInfo = {
-//             toiletDoor: `toiletDoor color is ${this.toiletDoor}`,
-//             livingRoomDoor: `livingRoomDoor color is ${this.livingRoomDoor}`,
-//             bathRoomDoor: `bathRoomDoor color is ${this.bathRoomDoor}`,
-//         };
-//         return colorDoorInfo;
-//     }
-//
-//     get doorsAndWindowsColors(){
-//         const doorsAndWindowsInfo = {
-//          livingRoomWindow: `livingRoomWindow color is ${this.livingRoomWindow}`,
-//          kitchenWindow: `kitchenWindow color is ${this.kitchenWindow}`,
-//          badRoomWindow: `badRoomWindow color is ${this.badRoomWindow}`,
-//          toiletDoor: `toiletDoor color is ${this.toiletDoor}`,
-//          livingRoomDoor: `livingRoomDoor color is ${this.livingRoomDoor}`,
-//          bathRoomDoor: `bathRoomDoor color is ${this.bathRoomDoor}`
-//         }
-//         return doorsAndWindowsInfo;
-//     }
-//
-//
-// }
+class Home {
+    constructor(door, window, room,kitchen) {
+        this.door = door;
+        this.window = window;
+        this.room = room;
+        this.kitchen = kitchen;
+    }
+
+    set changeWindowColor(newWindowColor){
+        this.window = newWindowColor;
+    }
+
+    set changeDoorColor(newDoorColor){
+        this.door = newDoorColor;
+    }
+
+    set changeDoorsAndWindowsColors(newDoorsAndWindowsColors){
+
+        this.window = newDoorsAndWindowsColors;
+        this.door = newDoorsAndWindowsColors;
+        this.room = newDoorsAndWindowsColors;
+        this.kitchen = newDoorsAndWindowsColors;
+
+
+    }
+
+    get returnWindowColor(){
+        const colorWindowsInfo = {
+            window: `livingRoomWindow color is ${this.window}`,
+        };
+        return colorWindowsInfo;
+    }
+
+    get returnDoorColor(){
+        const colorDoorInfo = {
+            door: `toiletDoor color is ${this.door}`,
+        };
+        return colorDoorInfo;
+    }
+
+    get doorsAndWindowsColors(){
+        const doorsAndWindowsInfo = {
+            window: `livingRoomWindow color is ${this.window}`,
+            door: `kitchenWindow color is ${this.door}`,
+            room: `badRoomWindow color is ${this.room}`,
+            kitchen: `toiletDoor color is ${this.kitchen}`,
+        };
+        return doorsAndWindowsInfo;
+    }
+}
+
+class Penthouse extends Home {
+    constructor(swimmingPool, garage = true, door, window, room,kitchen) {
+        super(door, window, room,kitchen)
+        this.swimmingPool = swimmingPool;
+        this.garage = garage;
+    }
+
+    OpenCloseGarage(){
+
+        if (this.garage = true){
+            return `Garage is open`
+        }else {
+            `Garage closed`
+        }
+    }
+}
+
+
 
 
