@@ -35,21 +35,16 @@
 // let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //
 // function sortArray(arr, size, sort = 1) {
-//     if (sort === 0) {
+//
 //         for (let i = 0; i < arr.length; i++) {
-//             arr.sort((a, b) => a - b)
+//             arr.sort((a, b) => sort === 0 ? a - b: b - a)
 //         }
+//
 //         return arr
-//     } else {
-//         for (let i = 0; i < arr.length; i++) {
-//             arr.sort((a, b) => b - a)
-//         }
-//         return arr
-//     }
+//
 // }
 //
-// console.log(sortArray(array, 10, 0));
-//
+// console.log(sortArray(array, 10, 1));
 
 //3 сколько различных чисел в заданном массиве
 // example: const testArr = [1,1,2,3,4,4]
@@ -214,11 +209,11 @@
 // // 9.2 Написать getter-ы которые будут возвращать цвет окон, цвет дверей и цвет всего дома.
 //
 //     get getDoor() {
-//         const doorColor = this.door;
+//         return this.door;
 //     }
 //
 //     get getWindow() {
-//         const windowColor = this.window;
+//         return this.window;
 //     }
 //
 //     get getAllHouse() {
@@ -226,15 +221,16 @@
 //             doorColor: this.door,
 //             windowColor: this.window
 //         };
+//         return fullInfo
 //     }
 // }
 //
 //
 // // 9.3 Создать Пентхаус который будет потомком класса ДОМ ( extend ) с новыми полями ( бассейн, гараж )
 //
-// class pentHouse extends House {
-//     constructor(pool, garage) {
-//         super(pool, garage);
+// class Penthouse extends House {
+//     constructor(pool, garage, window, door) {
+//         super(window, door);
 //         this.pool = pool;
 //         this.garage = garage
 //     }
