@@ -292,7 +292,7 @@ function map(fn, arry) {
 
 console.log(map(mult, arr))*/
 
-// 19) Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen,
+/*// 19) Напиши функцию fmap(a, gen), которая принимает на вход 2 функции, a и gen,
 // где gen — функция-генератор вроде той, что была в 17 задании.
 // fmap возвращает новую функцию-генератор,
 // которая при каждом вызове берет следующее значение из gen и пропускает его через функцию a.
@@ -317,5 +317,5 @@ let result = fmap(mult, someGener)
 console.log(result());
 console.log(result());
 console.log(result());
-console.log(result());
+console.log(result());*/
 
