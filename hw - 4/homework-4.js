@@ -91,22 +91,22 @@ function sortArr(arr) {
      }
     return count;
 }*/
-// const testArr = [1,1,2,3,4,4,]
-// /////////////////       вот такой масив уже работает не корректно
-// //                                            [1,1,2,3,4,4,4]
-// ////////////////        в этом весь ступор
-//
+// const testArr = [1,-1,2,3,44,4,2,1,1,1,1,44,44,55,55]
+// console.log(testArr)
 // function sortArr(arr) {
 //     let count = 0;
-//      for (let i = 0; i <= arr.length; i++) {
-//         for (let j = i + 1; j <= arr.length; i++) {
-//             if (arr[i] === arr[j]) {
-//                 count++;
-//                 break;
+//      for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//
+//                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+//             }
+//             if (arr[j] === arr[j + 1]){
+//                 arr.splice(j,1)
 //             }
 //         }
 //     }
-//     return count;
+//     return arr.length;
 // }
 // console.log(sortArr(testArr))
 
@@ -210,6 +210,7 @@ function camperArrSameElement(firstArr, secondArr) {
 }*/
 
 
+/*
 // 9 Создать класс Дом у которого есть окна и двери.
 // 9.1 Написать setter-ы которые будут красить окна,
 // красить двери и красить весь дом ( 3 сеттера)
@@ -286,6 +287,7 @@ class Penthouse extends Home {
         }
     }
 }
+*/
 
 
 
