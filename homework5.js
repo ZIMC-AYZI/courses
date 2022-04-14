@@ -4,43 +4,29 @@
 //   showInfo(obj2)  // name: 'test2', age: 12, surname: 'bolov'
 
 
-const obj1 = {
+const manager = {
     name: 'Stas',
     surname: 'Petrow',
-    age: 20,
+    age: 20 + ' y.o.',
+    getInfo() {
+        console.log(this.name, this.surname, this.age)
+    }
+
 
 };
-const obj2 = {
+const admin = {
     name: 'Petya',
     surname: 'Zalupkin',
-    age:15,
+    age: 15 + ' y.o.',
+    getInfo() {
+        console.log(this.name, this.surname, this.age)
+    }
+
 
 };
 
-function display() {
-    alert(this.obj2);
-
-}
-obj1.display = name;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+manager.getInfo();
+admin.getInfo();
 
 
 //2 Дан массив чисел размерностью 10 элементов. Написать функцию, которая  сортирует массив по возрастанию или по убыванию,
