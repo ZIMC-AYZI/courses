@@ -2,8 +2,6 @@ const createBtn = document.querySelector('.btn');
 const cardContainer = document.querySelector('.card-container');
 const name = ['Stas', 'Dima', 'Petya', 'Vladik', 'Alesha', 'Valya', 'Nadya'];
 const description = ['Love dicks', 'Hello world', 'Photoshooter', 'Shlyapa usataya', 'Prodavec ogurcov'];
-let image = new Image();
-image.src = "https://random.imagecdn.app/500/500";
 let cards = [
     {
         name: 'Lyuba',
@@ -26,7 +24,7 @@ function getRandomCard() {
 }
 
 function getRandomImage() {
-    return `https://random.imagecdn.app/400/500`
+    return `https://random.imagecdn.app/500/500`
 }
 
 function cardRender() {
