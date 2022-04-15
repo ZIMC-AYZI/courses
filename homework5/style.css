@@ -131,6 +131,12 @@ body {
     flex-wrap: wrap;
 }
 
+.card-wrapper {
+    width: 222px;
+    height: 346px;
+    position: relative;
+}
+
 .card {
     width: 222px;
     height: 311px;
@@ -140,7 +146,31 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+}
+
+.btn-remove {
+    width: 222px;
+    height: 40px;
+    position: absolute;
+    z-index: -1;
+    bottom: 35px;
+    border-radius: 0 0 9px 9px;
+    transition: .2s ease-in;
+    background-image: url('icons.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-wrapper:hover .btn-remove {
+    bottom: 0;
+    transition: .2s ease-in;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn-remove:hover {
+    z-index: 1;
+    bottom: -35px;
 }
 
 .img {
@@ -162,6 +192,6 @@ body {
     position: absolute;
     font-size: 18px;
     color: white;
-    bottom: 10px;
+    bottom: 35px;
     left: 30px;
 }
