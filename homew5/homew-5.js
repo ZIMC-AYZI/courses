@@ -3,7 +3,7 @@
 let cards = [
     {
         nameCard : "Ivan",
-        image: takeImage() , //`https://random.imagecdn.app/500/500`
+        image: `https://random.imagecdn.app/500/500`,
         descriptionName: 'Pizdorvan'
     }
 ];
@@ -26,9 +26,6 @@ btnAdd.addEventListener('click', () => {
 cards = [...cards, getRundom()];
 cardRender();
 });
-function takeImage() {
-    return `https://random.imagecdn.app/500/500`
-}
 
 function cardRender() {
     let  res = '';
