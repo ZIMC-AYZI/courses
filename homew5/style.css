@@ -1,5 +1,5 @@
 body {
-    background: black;
+    /*background: black;*/
 }
 
 .container {
@@ -18,24 +18,50 @@ body {
     border-radius: 32px;
     cursor: pointer;
     margin-top: 301px;
-    margin-bottom: 291px;
+    margin-bottom: 291px
+
 }
 
 .cards-container {
     display: grid;
     grid-template-columns: repeat(6,1fr);
+
 }
 
 .card {
     width: 175px;
     height: 251px;
-    background: #3E3E3E;;
+    background: #3E3E3E;
     margin-bottom: 34px;
     border-radius: 12px;
     margin-left: 53px;
     margin-right: -10px;
+    padding-top: 2.56%;
+    transition: transform 1s;
+}
+
+.btn-dele{
+    visibility: hidden;
+    width: 175px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 12px;
+    background-image: url("Imags/Icons.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     padding-left:4%;
     padding-top: 2.56%;
+    transition: transform 1s;
+
+}
+
+.card:hover {
+    /*transform: translate3d(0px, -25px, 0px);*/
+}
+
+.card:hover .btn-dele{
+    visibility: visible;
+    transform: translate3d(0px, 50px, 0px);
 }
 
 .image {
@@ -43,18 +69,23 @@ body {
     width: 165px;
     height: 195px;
     border-radius: 10px;
-
-
+    margin-left: 5px;
+    transition: transform 1s linear;
 }
 
 .name-card {
     position: absolute;
     font-size: 19px;
     color: #FFFFFF;
+    margin-left: 17px;
+    margin-top: 16px;
 }
+
 
 .description-name {
     position: absolute;
     font-size: 17px;
     color: #FFFFFF;
+    margin-top:-10px;
+    margin-left: 17px;
 }

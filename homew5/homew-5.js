@@ -4,7 +4,8 @@ let cards = [
     {
         nameCard : "Ivan",
         image: `https://random.imagecdn.app/500/500`,
-        descriptionName: 'Pizdorvan'
+        descriptionName: 'Pizdorvan',
+        id: 1
     }
 ];
 
@@ -13,6 +14,7 @@ function getRundom() {
         nameCard: nameArr[Math.floor(Math.random() * (nameArr.length-1)) + 1],
         image: `https://random.imagecdn.app/500/500`,
         descriptionName: descriptionArr[Math.floor(Math.random() * (descriptionArr.length - 1)) + 1],
+        id: Math.floor(Math.random() * 1000)
     }
 }
 
@@ -25,7 +27,12 @@ const descriptionArr = ['Krasivoe', 'Potnoe', 'Eboy', 'Selitra', 'Pingvin', 'Lap
 btnAdd.addEventListener('click', () => {
 cards = [...cards, getRundom()];
 cardRender();
-});
+})
+
+function deleteCards(id) {
+    cards = cards.filter(cards => cards.id !== id);
+    cardRender();
+}
 
 function cardRender() {
     let  res = '';
@@ -34,6 +41,7 @@ function cardRender() {
 <p class="name-card">${cards[i].nameCard}</p>
 <img class="image" src="${cards[i].image}">
 <p class="description-name">${cards[i].descriptionName}</p>
+<button onclick="deleteCards(${cards[i].id})" class="btn-dele"></button>
 </div>`
     }
     cardsConatainer.innerHTML = res;
