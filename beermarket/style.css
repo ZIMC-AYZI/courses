@@ -18,6 +18,7 @@ input {
 }
 
 .btn-container {
+    position: relative;
     width: 950px;
     height: 100px;
     margin: 0 auto;
@@ -38,6 +39,15 @@ input {
 }
 
 .search:hover {
+    cursor: pointer;
+}
+
+.basket {
+    position: absolute;
+    right: 20px;
+}
+
+.basket:hover {
     cursor: pointer;
 }
 

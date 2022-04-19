@@ -35,6 +35,7 @@ async function getBeer() {
             beer = [...beer, ...beers];
             beerRender();
         });
+
 }
 
 function searchName() {
@@ -57,3 +58,30 @@ function beerRender() {
 
 }
 
+(function() {
+    let updateButton = document.getElementById('openDetails');
+    let cancelButton = document.getElementById('cancel');
+    let dialog = document.getElementById('favDialog');
+    dialog.returnValue = 'favAnimal';
+
+    function openCheck(dialog) {
+        if(dialog.open) {
+            console.log('Dialog open');
+        } else {
+            console.log('Dialog closed');
+        }
+    }
+
+    // Update button opens a modal dialog
+    updateButton.addEventListener('click', function() {
+        dialog.showModal();
+        openCheck(dialog);
+    });
+
+    // Form cancel button closes the dialog box
+    cancelButton.addEventListener('click', function() {
+        dialog.close('animalNotChosen');
+        openCheck(dialog);
+    });
+
+})();

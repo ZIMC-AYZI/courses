@@ -6,23 +6,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<dialog id="favDialog">
+    <form method="dialog">
+        <section>
+            <p><label for="favAnimal">Favorite animal:</label>
+                <select id="favAnimal" name="favAnimal">
+                    <option></option>
+                    <option>Brine shrimp</option>
+                    <option>Red panda</option>
+                    <option>Spider monkey</option>
+                </select></p>
+        </section>
+        <menu>
+            <button id="cancel" type="reset">Cancel</button>
+            <button type="submit">Confirm</button>
+        </menu>
+    </form>
+</dialog>
+
 <div class="btn-container">
     <input class="input" type="text" placeholder="Введите название пива" >
     <button onclick="getBeer()" class="search">SEARCH</button>
+    <img src="shopping-cart.svg" id="openDetails" class="basket" width="60" height="60">
 </div>
 <div class="wrapper">
-<div class="beer-container">
-<!--    <div class ="card">-->
-<!--        <p class="name"></p>-->
-<!--        <img class="img" src="">-->
-<!--        <p class="description"></p>-->
-<!--    </div>-->
-<!--    <div class ="card">-->
-<!--        <p class="name"></p>-->
-<!--        <img class="img" src="">-->
-<!--        <p class="description"></p>-->
-<!--    </div>-->
-</div>
+<div class="beer-container"></div>
 </div>
 <script src="js.js"></script>
 </body>
