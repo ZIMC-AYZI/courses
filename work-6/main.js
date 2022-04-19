@@ -30,15 +30,15 @@ function test() {
 //
 // const container = document.querySelector('.container');
 //
-// function renderUsersList(images) {
-//   let template = '';
-//
-//   images.forEach((image) => {
-//     template += `<img src="${ image.url }"/>`
-//   });
-//
-//   container.innerHTML = template;
-// }
+function renderUsersList(images) {
+  let template = '';
+
+  images.forEach((image) => {
+    template += `<img src="${ image.url }"/>`
+  });
+
+  container.innerHTML = template;
+}
 
 
 // console.log(1);
