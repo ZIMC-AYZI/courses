@@ -2,7 +2,8 @@ const beerContainer = document.querySelector('.beer-container');
 const basketContainer = document.querySelector('.basket-container');
 const input = document.querySelector('.input');
 let beerData = [];
-let basketBeer = [];
+let basketData = [];
+let hash = {};
 let page = 1;
 
 basketWindow();
@@ -55,7 +56,7 @@ function beerRender() {
 <p class="description">${beer.tagline}</p>\
 </div>
 </div>
-<button onclick="addBasket(${beer.id})" class="btn-add" title="Добавить в корзину"></button>
+${basketData.filter(item => beer.id === item.id).length ? `<button onclick="delBeer(${beer.id})" class="btn-del" title="Удалить из корзины"></button>` : `<button onclick="addBasket(${beer.id})" class="btn-add" title="Добавить в корзину"></button>`}
 </div>`
     });
 
@@ -81,21 +82,21 @@ function basketWindow() {
 function addBasket(id) {
 
     const beerSelect = beerData.find((el) => el.id === id);
-    basketBeer = [...basketBeer, beerSelect];
+    basketData = [...basketData, beerSelect];
+    beerRender()
 
 }
 
 function delBeer(id) {
-    basketBeer = basketBeer.filter(card => card.id !== id);
-    basketRender()
+    basketData = basketData.filter(card => card.id !== id);
+    basketRender();
+    beerRender()
 }
-
-console.log(basketBeer);
 
 function basketRender() {
     let result = '';
 
-    basketBeer.forEach((beer) => {
+    basketData.forEach((beer) => {
 
         result += `<div class="card-wrapper">
 <div class ="card">
@@ -112,7 +113,6 @@ function basketRender() {
     basketContainer.innerHTML = result;
 
 }
-
 
 // onscroll = function() {
 //     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
