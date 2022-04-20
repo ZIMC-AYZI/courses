@@ -1,10 +1,13 @@
 const beerContainer = document.querySelector('.beer-container');
 const basketContainer = document.querySelector('.basket-container');
 const input = document.querySelector('.input');
-let beer = [];
+let beerData = [];
+let basketBeer = [];
 let page = 1;
 
-async function checkPosition() {
+basketWindow();
+
+function checkPosition() {
     const height = document.body.offsetHeight;
     const screenHeight = window.innerHeight;
     const scrolled = window.scrollY;
@@ -12,8 +15,8 @@ async function checkPosition() {
     const position = scrolled + screenHeight;
 
     if (position >= threshold) {
-        page+=1;
-        await getBeer()
+        page += 1;
+        getBeer()
     }
 }
 
@@ -22,33 +25,37 @@ async function checkPosition() {
     window.addEventListener("resize", checkPosition)
 })();
 
-async function getBeer() {
+function getBeer(resetArray = false) {
 
-    fetch(`https://api.punkapi.com/v2/beers?page=${ page }&per_page=10&beer_name=${ searchName() }`)
+    fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10&beer_name=${searchName()}`)
         .then((response) => response.json())
         .then(beers => {
-            beer = [...beer, ...beers];
+            beerData = resetArray ? beers : [...beerData, ...beers];
             beerRender();
         });
 
 }
 
 function searchName() {
+
     return input.value;
+
 }
 
 function beerRender() {
     let result = '';
 
-    beer.forEach((beer) => {
+    beerData.forEach((beer) => {
 
         result += `<div class="card-wrapper">
 <div class ="card">
+<div class="card-left"><img class="img" src="${beer.image_url}"></div>
+<div class="card-right">
 <p class="name">${beer.name}</p>
-<img class="img" src="${beer.image_url}">
-<p class="description">${beer.tagline}</p>
-<button class="btn-add" title="Добавить в корзину"></button>
+<p class="description">${beer.tagline}</p>\
 </div>
+</div>
+<button onclick="addBasket(${beer.id})" class="btn-add" title="Добавить в корзину"></button>
 </div>`
     });
 
@@ -61,22 +68,50 @@ function basketWindow() {
     let cancelButton = document.getElementById('cancel');
     let container = document.getElementById('dialog');
 
-    updateButton.addEventListener('click', function() {
+    updateButton.addEventListener('click', function () {
         container.showModal();
+        basketRender()
     });
 
-    cancelButton.addEventListener('click', function() {
+    cancelButton.addEventListener('click', function () {
         container.close();
     });
 }
 
+function addBasket(id) {
 
+    const beerSelect = beerData.find((el) => el.id === id);
+    basketBeer = [...basketBeer, beerSelect];
 
+}
 
+function delBeer(id) {
+    basketBeer = basketBeer.filter(card => card.id !== id);
+    basketRender()
+}
 
+console.log(basketBeer);
 
+function basketRender() {
+    let result = '';
 
+    basketBeer.forEach((beer) => {
 
+        result += `<div class="card-wrapper">
+<div class ="card">
+<div class="card-left"><img class="img" src="${beer.image_url}"></div>
+<div class="card-right">
+<p class="name">${beer.name}</p>
+<p class="description">${beer.tagline}</p>
+</div>
+</div>
+<button onclick="delBeer(${beer.id})" class="btn-del" title="Удалить из корзины"></button>
+</div>`
+    });
+
+    basketContainer.innerHTML = result;
+
+}
 
 
 // onscroll = function() {

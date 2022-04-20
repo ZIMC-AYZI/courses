@@ -8,14 +8,14 @@
 <body>
 <dialog id="dialog">
         <div class="basket-container"></div>
-        <menu>
+        <div class="menu-wrapper">
             <button id="cancel" type="reset">Cancel</button>
-        </menu>
+        </div>
 </dialog>
 <div class="btn-container">
     <input class="input" type="text" placeholder="Введите название пива" >
-    <button onclick="getBeer()" class="search">SEARCH</button>
-    <img onclick="basketWindow()" src="shopping-cart.svg" id="openDetails" class="basket" width="60" height="60">
+    <button onclick="getBeer(true)" class="search">SEARCH</button>
+    <img src="shopping-cart.svg" id="openDetails" class="basket" width="60" height="60">
 </div>
 <div class="wrapper">
 <div class="beer-container"></div>
