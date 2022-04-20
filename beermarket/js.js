@@ -1,11 +1,8 @@
 const beerContainer = document.querySelector('.beer-container');
+const basketContainer = document.querySelector('.basket-container');
 const input = document.querySelector('.input');
 let beer = [];
-
-// onscroll = function() {
-//     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
-//         alert('Конец прокрутки');
-// };
+let page = 1;
 
 async function checkPosition() {
     const height = document.body.offsetHeight;
@@ -24,8 +21,6 @@ async function checkPosition() {
     window.addEventListener("scroll", checkPosition)
     window.addEventListener("resize", checkPosition)
 })();
-
-let page = 1;
 
 async function getBeer() {
 
@@ -47,10 +42,13 @@ function beerRender() {
 
     beer.forEach((beer) => {
 
-        result += `<div class ="card">
+        result += `<div class="card-wrapper">
+<div class ="card">
 <p class="name">${beer.name}</p>
 <img class="img" src="${beer.image_url}">
 <p class="description">${beer.tagline}</p>
+<button class="btn-add" title="Добавить в корзину"></button>
+</div>
 </div>`
     });
 
@@ -58,30 +56,30 @@ function beerRender() {
 
 }
 
-(function() {
+function basketWindow() {
     let updateButton = document.getElementById('openDetails');
     let cancelButton = document.getElementById('cancel');
-    let dialog = document.getElementById('favDialog');
-    dialog.returnValue = 'favAnimal';
+    let container = document.getElementById('dialog');
 
-    function openCheck(dialog) {
-        if(dialog.open) {
-            console.log('Dialog open');
-        } else {
-            console.log('Dialog closed');
-        }
-    }
-
-    // Update button opens a modal dialog
     updateButton.addEventListener('click', function() {
-        dialog.showModal();
-        openCheck(dialog);
+        container.showModal();
     });
 
-    // Form cancel button closes the dialog box
     cancelButton.addEventListener('click', function() {
-        dialog.close('animalNotChosen');
-        openCheck(dialog);
+        container.close();
     });
+}
 
-})();
+
+
+
+
+
+
+
+
+
+// onscroll = function() {
+//     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
+//         alert('Конец прокрутки');
+// };

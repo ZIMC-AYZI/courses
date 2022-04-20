@@ -63,12 +63,48 @@ input {
     background: lightgoldenrodyellow;
 }
 
-.card {
+.card-wrapper {
     position: relative;
+    width: 280px;
+    height: 250px;
+    margin-bottom: 25px;
+}
+
+.card {
     width: 250px;
     height: 250px;
     background: goldenrod;
-    margin-bottom: 25px;
+}
+
+.btn-add {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: -1;
+    right: 30px;
+    transition: .2s ease-out;
+    background-image: url("plus-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-add::before {
+    content: attr(text);
+}
+
+.btn-add:hover::before {
+    content: attr(hover-text);
+}
+
+.card-wrapper:hover .btn-add {
+    right: 0;
+    z-index: 1;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    z-index: 1;
 }
 
 .name {
@@ -96,4 +132,9 @@ input {
     left: 120px;
     bottom: 3px;
     font-size: 14px;
+}
+
+.basket-container {
+    width: 700px;
+    /*height: 700px;*/
 }
