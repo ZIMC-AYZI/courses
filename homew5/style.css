@@ -1,46 +1,182 @@
 body {
-    /*background: black;*/
+    background: black;
 }
 
 .container {
     width: 100%;
     height: 300px;
     margin: 0 auto;
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
 }
+
 .btn-container {
     display: flex;
     justify-content: center;
-    margin: 10px;
 }
+
+.red__text{
+    text-transform: uppercase;
+    font-size: 17px;
+    color: red;
+}
+
 .btn {
     width: 264px;
     height: 73px;
     border-radius: 32px;
     cursor: pointer;
     margin-top: 301px;
-    margin-bottom: 291px
+    margin-bottom: 291px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
 
+.bulb {
+    width: 63px;
+    height: 63px;
+    position: absolute;
+    left: 74px;
+    top: 68px;
+
+    background: white;
+    border-radius: 32px;
+}
+.bulb1 {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 454px;
+    top: 47px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb2 {
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    left: 730px;
+    top: 27px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb3 {
+    width: 83px;
+    height: 83px;
+    position: absolute;
+    left: 1134px;
+    top: 68px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb4 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 91px;
+    top: 454px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb5 {
+    width: 51px;
+    height: 51px;
+    position: absolute;
+    left: 228px;
+    top: 337px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb6 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 364px;
+    top: 434px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb7 {
+    width: 42px;
+    height: 42px;
+    position: relative;
+    left: 1134px;
+    top: 294px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb8 {
+    width: 63px;
+    height: 63px;
+    position: relative;
+    left: 1217px;
+    top: 453px;
+
+    background: white;
+    border-radius: 32px;
 }
 
 .cards-container {
     display: grid;
     grid-template-columns: repeat(6,1fr);
-
+    grid-gap: 34px 43px;
+    position: relative;
 }
 
 .card {
     width: 175px;
     height: 251px;
     background: #3E3E3E;
-    margin-bottom: 34px;
     border-radius: 12px;
-    margin-left: 53px;
-    margin-right: -10px;
-    padding-top: 2.56%;
     transition: transform 1s;
+    position: relative;
+    left: 53px;
+}
+
+.image {
+    position: relative;
+    left: 4px;
+    top: 3px;
+    width: 165px;
+    height: 195px;
+    border-radius: 10px;
+    transition: transform 1s linear;
+}
+
+.name-card {
+    position: relative;
+    left: 15px;
+    bottom: 80%;
+    font-size: 19px;
+    color: #FFFFFF;
+}
+
+.description-name {
+    position: relative;
+    left: 18px;
+    bottom: 25%;
+    font-size: 17px;
+    color: #FFFFFF;
 }
 
 .btn-dele{
+    position: relative;
+    bottom: 100px;
     visibility: hidden;
     width: 175px;
     height: 50px;
@@ -49,10 +185,7 @@ body {
     background-image: url("Imags/Icons.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    padding-left:4%;
-    padding-top: 2.56%;
     transition: transform 1s;
-
 }
 
 .card:hover {
@@ -61,31 +194,5 @@ body {
 
 .card:hover .btn-dele{
     visibility: visible;
-    transform: translate3d(0px, 50px, 0px);
-}
-
-.image {
-    vertical-align: center;
-    width: 165px;
-    height: 195px;
-    border-radius: 10px;
-    margin-left: 5px;
-    transition: transform 1s linear;
-}
-
-.name-card {
-    position: absolute;
-    font-size: 19px;
-    color: #FFFFFF;
-    margin-left: 17px;
-    margin-top: 16px;
-}
-
-
-.description-name {
-    position: absolute;
-    font-size: 17px;
-    color: #FFFFFF;
-    margin-top:-10px;
-    margin-left: 17px;
+    transform: translate3d(0px, 40px, 0px);
 }
