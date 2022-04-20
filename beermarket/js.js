@@ -3,8 +3,11 @@ const basketContainer = document.querySelector('.basket-container');
 const input = document.querySelector('.input');
 let beerData = [];
 let basketData = [];
-let hash = {};
 let page = 1;
+
+if (localStorage.getItem('saveData')) {
+    basketData = JSON.parse(localStorage.getItem('saveData'))
+}
 
 basketWindow();
 
@@ -68,6 +71,7 @@ function basketWindow() {
     let updateButton = document.getElementById('openDetails');
     let cancelButton = document.getElementById('cancel');
     let container = document.getElementById('dialog');
+    let resetButton = document.getElementById('reset');
 
     updateButton.addEventListener('click', function () {
         container.showModal();
@@ -77,13 +81,24 @@ function basketWindow() {
     cancelButton.addEventListener('click', function () {
         container.close();
     });
+
+    resetButton.addEventListener('click', () => {
+        basketData = [];
+        basketRender();
+        localStorage.clear();
+        beerRender()
+    });
+
+
+
 }
 
 function addBasket(id) {
 
     const beerSelect = beerData.find((el) => el.id === id);
     basketData = [...basketData, beerSelect];
-    beerRender()
+    beerRender();
+    localStorage.setItem('saveData', JSON.stringify(basketData));
 
 }
 
@@ -113,6 +128,7 @@ function basketRender() {
     basketContainer.innerHTML = result;
 
 }
+
 
 // onscroll = function() {
 //     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
