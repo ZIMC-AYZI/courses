@@ -104,6 +104,7 @@ function addBasket(id) {
 
 function delBeer(id) {
     basketData = basketData.filter(card => card.id !== id);
+    localStorage.setItem('saveData', JSON.stringify(basketData));
     basketRender();
     beerRender()
 }
