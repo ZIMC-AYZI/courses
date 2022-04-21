@@ -25,7 +25,7 @@ function checkPosition() {
 }
 
 ;(() => {
-    window.addEventListener("scroll", checkPosition)
+    window.addEventListener("scroll", checkPosition);
     window.addEventListener("resize", checkPosition)
 })();
 

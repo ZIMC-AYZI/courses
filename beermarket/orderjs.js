@@ -1,6 +1,11 @@
 const orderContainer = document.querySelector('.order');
 const createOrder = document.querySelector('.createOrder');
+const inputName = document.querySelector('.inputName');
+const inputSoname = document.querySelector('.inputSoname');
+const inputPatronymic = document.querySelector('.inputPatronymic');
+const inputNumber = document.querySelector('.inputNumber');
 let basketData = [];
+let readyOrder = {};
 
 if (localStorage.getItem('saveData')) {
     basketData = JSON.parse(localStorage.getItem('saveData'))
@@ -8,9 +13,21 @@ if (localStorage.getItem('saveData')) {
 
 basketOrder();
 
-createOrder.addEventListener('click', () => {
-    console.log(123)
-});
+function searchName() {
+    return inputName.value;
+}
+
+function searchSoname() {
+    return inputSoname.value;
+}
+
+function searchPatronymic() {
+    return inputPatronymic.value;
+}
+
+function searchNNumber() {
+    return inputNumber.value;
+}
 
 function delBeer(id) {
     basketData = basketData.filter(card => card.id !== id);
@@ -38,3 +55,15 @@ function basketOrder() {
     orderContainer.innerHTML = result;
 
 }
+
+createOrder.addEventListener('click', () => {
+    readyOrder = {
+        name: searchName(),
+        second_name: searchSoname(),
+        last_name: searchPatronymic(),
+        phone: searchNNumber(),
+        order: basketData
+    };
+
+    return console.log(readyOrder)
+});
