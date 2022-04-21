@@ -129,7 +129,6 @@ function basketRender() {
 
 }
 
-
 // onscroll = function() {
 //     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
 //         alert('Конец прокрутки');
