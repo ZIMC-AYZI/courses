@@ -41,7 +41,7 @@ p {
     width: 950px;
     display: flex;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: flex-start;
     border-right: 1px solid black;
@@ -61,5 +61,106 @@ p {
 
 .createOrder {
     margin-bottom: 20px;
+}
+
+.card-wrapper {
+    position: relative;
+    width: 280px;
+    height: 250px;
+    margin-bottom: 25px;
+}
+
+.card {
+    width: 250px;
+    height: 250px;
+    background: goldenrod;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-left {
+    width: 80px;
+    height: 130px;
+}
+
+.card-right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-add {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    right: 30px;
+    transition: .2s ease-out;
+    background-image: url("plus-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-del {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    right: 30px;
+    transition: .2s ease-out;
+    background-image: url("Breezeicons-actions-22-window-close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.card-wrapper:hover .btn-add {
+    right: 0;
+    z-index: 1;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    z-index: 1;
+}
+
+.card-wrapper:hover .btn-del {
+    right: 0;
+    z-index: 1;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+.btn-del:hover {
+    z-index: 1;
+}
+
+.name {
+    max-width: 90%;
+    height: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.img {
+    width: 80px;
+    height: 230px;
+    margin: 10px 0 10px 5px;
+}
+
+.description {
+    color: white;
+    width: 120px;
+    font-size: 14px;
+    padding-top: 30px;
 }
 
