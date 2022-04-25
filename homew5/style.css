@@ -4,9 +4,9 @@ body {
 
 .container {
     width: 100%;
-    height: 300px;
+    height: 500px;
     margin: 0 auto;
-    /*position: relative;*/
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -34,8 +34,8 @@ body {
 }
 
 .bulb {
-    width: 63px;
-    height: 63px;
+    width: 137px;
+    height: 137px;
     position: absolute;
     left: 74px;
     top: 68px;
@@ -55,11 +55,11 @@ body {
 }
 
 .bulb2 {
-    width: 47px;
-    height: 47px;
+    width: 90px;
+    height: 90px;
     position: absolute;
     left: 730px;
-    top: 27px;
+    top: 23px;
 
     background: white;
     border-radius: 32px;
@@ -91,7 +91,7 @@ body {
     width: 51px;
     height: 51px;
     position: absolute;
-    left: 228px;
+    left: 238px;
     top: 337px;
 
     background: white;
@@ -99,20 +99,9 @@ body {
 }
 
 .bulb6 {
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    left: 364px;
-    top: 434px;
-
-    background: white;
-    border-radius: 32px;
-}
-
-.bulb7 {
     width: 42px;
     height: 42px;
-    position: relative;
+    position: absolute;
     left: 1134px;
     top: 294px;
 
@@ -120,10 +109,42 @@ body {
     border-radius: 32px;
 }
 
+.bulb7 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 91px;
+    top: 453px;
+
+    background: white;
+    border-radius: 32px;
+}
+
 .bulb8 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 364px;
+    top: 484px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb9 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 895px;
+    top: 484px;
+
+    background: white;
+    border-radius: 32px;
+}
+.bulb10 {
     width: 63px;
     height: 63px;
-    position: relative;
+    position: absolute;
     left: 1217px;
     top: 453px;
 
@@ -133,7 +154,7 @@ body {
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(auto-fit, 175px);
     grid-gap: 34px 43px;
     position: relative;
 }
@@ -149,7 +170,7 @@ body {
 }
 
 .image {
-    position: relative;
+    position: absolute;
     left: 4px;
     top: 3px;
     width: 165px;
@@ -159,7 +180,7 @@ body {
 }
 
 .name-card {
-    position: relative;
+    position: absolute;
     left: 15px;
     bottom: 80%;
     font-size: 19px;
@@ -167,16 +188,16 @@ body {
 }
 
 .description-name {
-    position: relative;
+    position: absolute;
     left: 18px;
-    bottom: 25%;
+    bottom: 10%;
     font-size: 17px;
     color: #FFFFFF;
 }
 
 .btn-dele{
-    position: relative;
-    bottom: 100px;
+    position: absolute;
+    bottom: 0;
     visibility: hidden;
     width: 175px;
     height: 50px;
