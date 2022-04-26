@@ -1,49 +1,110 @@
 'use strict';
-let beerData;
+let beerDat;
+let beerBasket = [];
 let page  = 1;
-const cardsConatainer = document.querySelector('.cards-container');
+let perPage = 10;
+
+const cardsContainer = document.querySelector('.cards-container');
+
+const myClick = () => {
+    let input = document.querySelector('.input__value');
+    return input.value
+};
 
 document.querySelector('.btn')
-        .addEventListener('click', myClick);
+        .addEventListener('click', (e) => {
+            showBasket('.bask__bask')
+});
 
-
-function myClick(){
-    //console.log(document.querySelector('.input__value').value);
-    return  document.querySelector('.input__value').value;
+function showBasket (container) {
+    const bask__bask = document.querySelector(container)
+    bask__bask.style.display = 'block'
 }
 
-function getBeers(){
-    //?beer_name=${myClick}
-    const responseBeer = fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10`)
-        .then(response => response.json()).then((beerData) => beerData);
+document.addEventListener('scroll', scrollAdd)//=> {
+//     let seeScroll = document.documentElement.clientHeight;
+//     let fullScroll = document.documentElement.scrollHeight;
+//     let positionScroll = window.pageYOffset;
+//     let positionScroll1 = document.documentElement.scrollTop;
+//
+//
+//     let partOffSeeScroll = 3;
+//
+//     let maxPosForPositionScroll = fullScroll - seeScroll;
+//     let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll)
+//     if (window.pageYOffset > a){
+//         page++;
+//         perPage +=10;
+//         getBeers();
+//     }
+// });
 
-        responseBeer.then((beerData) => {
-            console.log(beerData);
-        cardRenders(beerData)
-    })
+function scrollAdd () {
+    let seeScroll = document.documentElement.clientHeight;
+    let fullScroll = document.documentElement.scrollHeight;
+
+    let partOffSeeScroll = 6;
+
+    let maxPosForPositionScroll = fullScroll - seeScroll;
+    let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll)
+    if (window.pageYOffset > a){
+        page++;
+        perPage++;
+        console.log(perPage)
+        getBeers();
+    }
+    console.log(`${maxPosForPositionScroll}  // ${window.pageYOffset} // ${fullScroll} / ${a}`)
 }
-getBeers();
 
-function cardRenders(beerData){
+function getBeers () {
+    // const responseBeer = fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10&beer_name=${myClick()}`)
+    //     .then(response => response.json()).then((beerData) => beerData);
+    //
+    //     responseBeer.then(beerData => {
+    //         beerDat = [...beerData]
+    //        console.log(beerDat);
+    //     cardRenders(beerData)
+    // })
+    fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${perPage}&beer_name=${myClick()}`)
+        .then(response => response.json())
+        .then(beerSort => {
+            beerDat = [...beerSort];
+            cardRenders();
+        })
+}
+
+function cardRenders () {
     let cardsRes = "";
 
-    beerData.forEach((card) =>  {
-            cardsRes += `<div class="cards">
-<img class="imag" src="${card.image_url}">
-<p class="name">${card.name}</p>
-<p class="description">${card.description}</p>
-<p class="abv">${card.abv}<span>% alc</span></p>
-<button class="btn__add">${addBeerToBask(card.id)}</button>
+    beerDat.forEach((beerSort) => {
+
+        cardsRes += `<div class="cards">
+<img class="imag" src="${beerSort.image_url}">
+<p class="name">${beerSort.name}</p>
+<p class="description">${beerSort.description}</p>
+<p class="abv">${beerSort.abv}<span>% alc</span></p>
+<button onclick ="addBeerToBask(${beerSort.id})" class="btn__add"></button>
 </div>`
     });
-
-    cardsConatainer.innerHTML = cardsRes;
+    cardsContainer.innerHTML = cardsRes;
 }
 
 function addBeerToBask(id) {
-    document.querySelector('.add')
-        .addEventListener('click', () => {
-            beerData.filter(beerData => beerData.id === id);
-            console.log(beerData)
-        })
+    beerBasket = [...beerDat.filter(card => card.id === id), ...beerBasket];
 }
+function cardBasketRenders () {
+    let cardsRes = "";
+
+    beerBasket.forEach((beerSort) => {
+
+        cardsRes += `<div class="cards">
+<img class="imag" src="${beerSort.image_url}">
+<p class="name">${beerSort.name}</p>
+<p class="description">${beerSort.description}</p>
+<p class="abv">${beerSort.abv}<span>% alc</span></p>
+<button onclick ="addBeerToBask(${beerSort.id})" class="btn__add"></button>
+</div>`
+    });
+    cardsContainer.innerHTML = cardsRes;
+}
+

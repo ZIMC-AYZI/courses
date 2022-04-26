@@ -6,7 +6,7 @@ body {
     height: 100vmax;
     font-family: "Comic Sans MS";
     background:
-            url("")
+            url("../imags/fon.jpg")
             center repeat ;
     background-size: cover;
 }
@@ -16,7 +16,7 @@ h1,h2,h3 {
 }
 .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 }
 /* Intro */
@@ -74,7 +74,7 @@ h1,h2,h3 {
     background: bisque;
 
 }
-.input {
+.input__value {
     height: 20px;
     border: 2px solid #fff;
     border-radius: 5px;
@@ -87,7 +87,8 @@ h1,h2,h3 {
     height: 26px;
     border-radius: 0 5px 5px 0;
     border: 2px solid #fff ;
-    background: url("../imags/2.png") center no-repeat ;
+    background: chartreuse;
+    /*background: url("../imags/2.png") center no-repeat ;*/
 }
 
 /*   cards   */
@@ -129,7 +130,6 @@ h1,h2,h3 {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 160px;
-    height: 150px;
     position: absolute;
     left: 23px;
     top: 235px;
@@ -140,7 +140,8 @@ h1,h2,h3 {
 .description:hover {
     transform: translate3d(-80px, -250px, 0px);
     width: 250px;
-    height: 300px;
+
+    padding: 1px;
     white-space: inherit;
     overflow: visible;
     font-size: 16px;
@@ -150,7 +151,8 @@ h1,h2,h3 {
     text-align: center;
     word-spacing: 2px;
     text-shadow: #cccccc -17px -8px 6px;
-    background: black;
+    background: black ;
+    z-index: 1;
 }
 
 .abv {
@@ -171,7 +173,7 @@ h1,h2,h3 {
     height: 50px;
     cursor: pointer;
     border-radius: 12px;
-    background-image: url("Imags/2.png");
+    background-image: url("../imags/2.png");
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 1s;
@@ -183,20 +185,27 @@ h1,h2,h3 {
     transform: translate3d(40px, 0px, 0px);
 }
 
+
 /*  Bask */
 
 .bask__container {
-    width: 180px;
+    width: 150px;
     position: sticky;
     bottom: 10px;
-    left: 90%;
+    left: calc(90% - 75px) ;
 
 }
 
 .bask__bask {
-    height: 200px;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: 30px;
     right: 50px;
-    background-image: url("Imags/3.jpg");
+    border: 2px double cyan;
+    background:
+            url("../Imags/1.png") center no-repeat beige;
+    display: none;
 }
 
 
