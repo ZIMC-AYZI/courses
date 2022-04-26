@@ -24,10 +24,7 @@ function checkPosition() {
     }
 }
 
-;(() => {
-    window.addEventListener("scroll", checkPosition);
-    window.addEventListener("resize", checkPosition)
-})();
+window.addEventListener("scroll", checkPosition);
 
 function getBeer(resetArray = false) {
 
