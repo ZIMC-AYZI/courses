@@ -1,0 +1,219 @@
+body {
+    background: black;
+}
+
+.container {
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.red__text{
+    text-transform: uppercase;
+    font-size: 17px;
+    color: red;
+}
+
+.btn {
+    width: 264px;
+    height: 73px;
+    border-radius: 32px;
+    cursor: pointer;
+    margin-top: 301px;
+    margin-bottom: 291px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.bulb {
+    width: 137px;
+    height: 137px;
+    position: absolute;
+    left: 74px;
+    top: 68px;
+
+    background: white;
+    border-radius: 32px;
+}
+.bulb1 {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 454px;
+    top: 47px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb2 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 730px;
+    top: 23px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb3 {
+    width: 83px;
+    height: 83px;
+    position: absolute;
+    left: 1134px;
+    top: 68px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb4 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 91px;
+    top: 454px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb5 {
+    width: 51px;
+    height: 51px;
+    position: absolute;
+    left: 238px;
+    top: 337px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb6 {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 1134px;
+    top: 294px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb7 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 91px;
+    top: 453px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb8 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 364px;
+    top: 484px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.bulb9 {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 895px;
+    top: 484px;
+
+    background: white;
+    border-radius: 32px;
+}
+.bulb10 {
+    width: 63px;
+    height: 63px;
+    position: absolute;
+    left: 1217px;
+    top: 453px;
+
+    background: white;
+    border-radius: 32px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 175px);
+    grid-gap: 34px 43px;
+    position: relative;
+}
+
+.card {
+    width: 175px;
+    height: 251px;
+    background: #3E3E3E;
+    border-radius: 12px;
+    transition: transform 1s;
+    position: relative;
+    left: 53px;
+}
+
+.image {
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 165px;
+    height: 195px;
+    border-radius: 10px;
+    transition: transform 1s linear;
+}
+
+.name-card {
+    position: absolute;
+    left: 15px;
+    bottom: 80%;
+    font-size: 19px;
+    color: #FFFFFF;
+}
+
+.description-name {
+    position: absolute;
+    left: 18px;
+    bottom: 10%;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+
+.btn-dele{
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    width: 175px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 12px;
+    background-image: url("Imags/Icons.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 1s;
+}
+
+.card:hover {
+    /*transform: translate3d(0px, -25px, 0px);*/
+}
+
+.card:hover .btn-dele{
+    visibility: visible;
+    transform: translate3d(0px, 40px, 0px);
+}
