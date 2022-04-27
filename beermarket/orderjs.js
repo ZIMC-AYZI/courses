@@ -1,5 +1,5 @@
 const orderContainer = document.querySelector('.order');
-const createOrder = document.querySelector('.createOrder');
+const createOrder = document.querySelector('.button');
 const inputName = document.querySelector('.inputName');
 const inputSoname = document.querySelector('.inputSoname');
 const inputPatronymic = document.querySelector('.inputPatronymic');

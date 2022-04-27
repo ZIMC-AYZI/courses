@@ -7,22 +7,38 @@
 </head>
 <body>
 <dialog id="dialog">
-        <div class="basket-container"></div>
-        <div class="menu-wrapper">
-            <button id="reset">Очистить корзину</button>
-            <form action="order.html" target="_blank">
-                <button id="create">Оформить заказ</button>
-            </form>
-            <button id="cancel" type="reset">Закрыть корзину</button>
-        </div>
+    <div class="basket-container"></div>
+    <div class="menu-wrapper">
+        <a class="button" id="reset">
+            <span class="button__line button__line--top"></span>
+            <span class="button__line button__line--right"></span>
+            <span class="button__line button__line--bottom"></span>
+            <span class="button__line button__line--left"></span>
+            CLEAR BASKET
+        </a>
+        <a href="order.html" target="_blank" class="button" id="create">
+            <span class="button__line button__line--top"></span>
+            <span class="button__line button__line--right"></span>
+            <span class="button__line button__line--bottom"></span>
+            <span class="button__line button__line--left"></span>
+            CREATE ORDER
+        </a>
+        <a class="button" id="cancel" type="reset">
+            <span class="button__line button__line--top"></span>
+            <span class="button__line button__line--right"></span>
+            <span class="button__line button__line--bottom"></span>
+            <span class="button__line button__line--left"></span>
+            CLOSE WINDOW
+        </a>
+    </div>
 </dialog>
 <div class="btn-container">
-    <input class="input" type="text" placeholder="Введите название пива" >
+    <input class="input" type="text" placeholder="Enter beer name">
     <button onclick="getBeer(true)" class="search">SEARCH</button>
     <img src="shopping-cart.svg" id="openDetails" class="basket" width="60" height="60">
 </div>
 <div class="wrapper">
-<div class="beer-container"></div>
+    <div class="beer-container"></div>
 </div>
 <script src="js.js"></script>
 </body>
