@@ -41,15 +41,17 @@ input {
     width: 80px;
     height: 30px;
     border-radius: 10px;
-    background: gold;
+    /*background: gold;*/
     letter-spacing: 2px;
-    transition: 1s;
+    background: linear-gradient(180deg, yellow, goldenrod);
+    transition: all 3s ease-out;
 }
 
 .search:hover {
-    /*background: linear-gradient(90deg, goldenrod, yellow);*/
+    background: linear-gradient(90deg, yellow, goldenrod);
     box-shadow: 0 0 20px yellow, 0 0 40px yellow;
-    transition: 1s;
+    /*background: black;*/
+    transition: all 3s ease-in;
     cursor: pointer;
 }
 
