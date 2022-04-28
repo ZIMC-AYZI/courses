@@ -1,0 +1,214 @@
+body {
+    background: black
+}
+
+
+.container {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+
+}
+
+
+.box {
+
+    background: white;
+    border-radius: 32px;
+
+}
+
+.box.one {
+    position: absolute;
+    width: 137px;
+    height: 137px;
+    top: 68px;
+    left: 74px;
+}
+
+.box.two {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 47px;
+    left: 454px;
+}
+
+.box.three {
+    position: absolute;
+    width: 51px;
+    height: 51px;
+
+    top: 337px;
+    left: 238px;
+}
+
+.box.four {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+
+    top: 453px;
+    left: 91px;
+}
+
+.box.five {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+
+    top: 484px;
+    left: 364px;
+}
+
+.box.six {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+
+    top: 23px;
+    right: 580px;
+}
+
+.box.seven {
+    position: absolute;
+    width: 83px;
+    height: 83px;
+
+    top: 68px;
+    right: 183px;
+}
+
+.box.eight {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top: 294px;
+    right: 224px;
+}
+
+.box.nine {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 484px;
+    right: 415px;
+}
+
+.box.ten {
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    top: 453px;
+    right: 120px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.add {
+    width: 264px;
+    height: 73px;
+    margin-top: 301px;
+    margin-bottom: 291px;
+    border-radius: 32px;
+}
+
+
+.remove {
+    background-image: url("Icons.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 42%;
+
+
+
+}
+
+.card:hover .remove {
+    opacity: 1;
+}
+
+
+.card-container {
+    width: 178px;
+    height: 251px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 178px);
+    grid-column-gap: 43px;
+    grid-row-gap: 3em;
+
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 251px;
+    border-radius: 12px;
+    background: #3E3E3E;
+    margin-left: 53px;
+
+
+}
+
+.card:hover{
+    border-bottom: 35px solid white;
+
+}
+
+.picture {
+
+    width: 165px;
+    height: 195px;
+    background: url("https://random.imagecdn.app/500/500");
+
+    margin-left: 3.77%;
+    margin-top: 2.56%;
+    border-radius: 10px;
+}
+
+.card__name {
+    position: absolute;
+    left: 9.43%;
+    right: 46.7%;
+    top: 6.41%;
+    bottom: 85.9%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+
+
+}
+
+.card__description {
+    position: absolute;
+    left: 9.43%;
+    right: 31.13%;
+    top: 86.54%;
+    bottom: 6.41%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.04em;
+    color: #FFFFFF;
+
+
+}
