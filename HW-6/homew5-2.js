@@ -5,6 +5,7 @@ let page  = 1;
 let perPage = 10;
 
 const cardsContainer = document.querySelector('.cards-container');
+const cardBasketContainer = document.querySelector('.card-basket-container');
 
 const myClick = () => {
     let input = document.querySelector('.input__value');
@@ -12,32 +13,16 @@ const myClick = () => {
 };
 
 document.querySelector('.btn')
-        .addEventListener('click', (e) => {
-            showBasket('.bask__bask')
-});
+        .addEventListener('click', () => {
+            showBasket('.bask__btn')
+        });
 
 function showBasket (container) {
-    const bask__bask = document.querySelector(container)
-    bask__bask.style.display = 'block'
+    const bask__btn = document.querySelector(container);
+    bask__btn.style.display = 'block'
 }
 
-document.addEventListener('scroll', scrollAdd)//=> {
-//     let seeScroll = document.documentElement.clientHeight;
-//     let fullScroll = document.documentElement.scrollHeight;
-//     let positionScroll = window.pageYOffset;
-//     let positionScroll1 = document.documentElement.scrollTop;
-//
-//
-//     let partOffSeeScroll = 3;
-//
-//     let maxPosForPositionScroll = fullScroll - seeScroll;
-//     let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll)
-//     if (window.pageYOffset > a){
-//         page++;
-//         perPage +=10;
-//         getBeers();
-//     }
-// });
+document.addEventListener('scroll', scrollAdd);
 
 function scrollAdd () {
     let seeScroll = document.documentElement.clientHeight;
@@ -46,17 +31,17 @@ function scrollAdd () {
     let partOffSeeScroll = 6;
 
     let maxPosForPositionScroll = fullScroll - seeScroll;
-    let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll)
+    let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll);
     if (window.pageYOffset > a){
         page++;
         perPage++;
-        console.log(perPage)
         getBeers();
     }
-    console.log(`${maxPosForPositionScroll}  // ${window.pageYOffset} // ${fullScroll} / ${a}`)
 }
 
 function getBeers () {
+    //--------------------//\\ Это не удаляю как пример еще одного рабочего метода-----
+    //--------------------------------    --------   --------   ------------   --------
     // const responseBeer = fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10&beer_name=${myClick()}`)
     //     .then(response => response.json()).then((beerData) => beerData);
     //
@@ -65,18 +50,18 @@ function getBeers () {
     //        console.log(beerDat);
     //     cardRenders(beerData)
     // })
-    fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${perPage}&beer_name=${myClick()}`)
-        .then(response => response.json())
-        .then(beerSort => {
-            beerDat = [...beerSort];
+        fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${perPage}&beer_name=${myClick()}`)
+            .then(response => response.json())
+            .then(beerSort => {
+             beerDat = [...beerSort];
             cardRenders();
         })
-}
+    }
 
 function cardRenders () {
-    let cardsRes = "";
+         let cardsRes = "";
 
-    beerDat.forEach((beerSort) => {
+        beerDat.forEach((beerSort) => {
 
         cardsRes += `<div class="cards">
 <img class="imag" src="${beerSort.image_url}">
@@ -85,26 +70,57 @@ function cardRenders () {
 <p class="abv">${beerSort.abv}<span>% alc</span></p>
 <button onclick ="addBeerToBask(${beerSort.id})" class="btn__add"></button>
 </div>`
-    });
-    cardsContainer.innerHTML = cardsRes;
+});
+cardsContainer.innerHTML = cardsRes;
 }
 
 function addBeerToBask(id) {
     beerBasket = [...beerDat.filter(card => card.id === id), ...beerBasket];
+    cardBasketRenders();
 }
+
+
+function deleteBeerFromBask(id) {
+    beerBasket = beerBasket.filter(card => card.id !== id);
+    console.log(beerBasket, ` dele`);
+    beerBasket = [...cardBasketRenders(), ...beerBasket]
+}
+
+document.querySelector('.bask__btn')
+        .addEventListener('click', () => {
+            showBasketModal('.bask-card-container');
+
+            cardBasketRenders();
+            console.log(beerBasket)
+        });
+
+function showBasketModal (container) {
+    const bask__btn = document.querySelector(container);
+    bask__btn.style.display = 'block';
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', () => {
+        bask__btn.style.display = 'none';
+        overlay.remove();
+    })
+
+
+}
+
 function cardBasketRenders () {
     let cardsRes = "";
 
     beerBasket.forEach((beerSort) => {
 
-        cardsRes += `<div class="cards">
+        cardsRes += `<div class="card-basket">
 <img class="imag" src="${beerSort.image_url}">
 <p class="name">${beerSort.name}</p>
 <p class="description">${beerSort.description}</p>
 <p class="abv">${beerSort.abv}<span>% alc</span></p>
-<button onclick ="addBeerToBask(${beerSort.id})" class="btn__add"></button>
+<button  class="btn__delete" onclick ="deleteBeerFromBask(${beerSort.id})"></button>
 </div>`
     });
-    cardsContainer.innerHTML = cardsRes;
+    cardBasketContainer.innerHTML = cardsRes;
 }
 

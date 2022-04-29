@@ -1,0 +1,101 @@
+
+.header {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid gray;
+
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 20px;
+}
+
+h2,
+h1 {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.oder-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    grid-column-gap: 10px;
+    position: relative;
+
+}
+
+.card {
+    height: 120px;
+    border: 2px solid aqua;
+    background: rgb(96,51,209);
+    background: linear-gradient(90deg, rgba(96,51,209,1) 0%, rgba(42,191,200,0.4206057422969187) 0%,
+    rgba(0,212,255,0.711922268907563) 80%);
+    position: relative;
+    left: 10px;
+}
+
+.name-beer {
+    position: absolute;
+    left: 5%;
+    bottom: 70px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.delete-btn {
+    position: absolute;
+    left: 35px;
+    bottom: 15px;
+    padding: 5px;
+    border-radius: 12px;
+    font-size: 15px;
+    border: 2px solid aqua;
+    background-color: #936e00;
+}
+
+.attributes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-attribute {
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.input-attribute {
+    width: 300px;
+    height: 24px;
+}
+
+.btn-container {
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.finale-btn {
+    width: 300px;
+    height: 100px;
+    padding: 20px;
+    font-size: 32px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
