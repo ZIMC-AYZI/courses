@@ -31,8 +31,8 @@ function scrollAdd () {
     let partOffSeeScroll = 6;
 
     let maxPosForPositionScroll = fullScroll - seeScroll;
-    let a = maxPosForPositionScroll - (seeScroll/partOffSeeScroll);
-    if (window.pageYOffset > a){
+    let positionForNextPage = maxPosForPositionScroll - (seeScroll/partOffSeeScroll);
+    if (window.pageYOffset > positionForNextPage){
         page++;
         perPage++;
         getBeers();
@@ -76,16 +76,16 @@ cardsContainer.innerHTML = cardsRes;
 
 function addBeerToBask(id) {
     beerBasket = [...beerDat.filter(card => card.id === id), ...beerBasket];
+    localStorage.setItem('tovar', JSON.stringify(beerBasket));
     cardBasketRenders();
 }
 
 
 function deleteBeerFromBask(id) {
     beerBasket = beerBasket.filter(card => card.id !== id);
-    console.log(beerBasket, ` dele`);
-    beerBasket = [...cardBasketRenders(), ...beerBasket]
+    localStorage.setItem('tovar', JSON.stringify(beerBasket));
+    beerBasket = [...cardBasketRenders(), ...beerBasket];
 }
-
 document.querySelector('.bask__btn')
         .addEventListener('click', () => {
             showBasketModal('.bask-card-container');

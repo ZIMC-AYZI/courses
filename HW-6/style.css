@@ -260,7 +260,7 @@ h1,h2,h3 {
     height: 50px;
     cursor: pointer;
     border-radius: 12px;
-    background-image: url("../imags/2.png");
+    background-image: url("../imags/del.jpg");
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 1s;
