@@ -2,19 +2,27 @@
 let beerDat;
 let beerBasket = [];
 let page  = 1;
-let perPage = 10;
+let countBeer = 0;
 
 const cardsContainer = document.querySelector('.cards-container');
 const cardBasketContainer = document.querySelector('.card-basket-container');
 
 const myClick = () => {
     let input = document.querySelector('.input__value');
-    return input.value
+    if (input.value === ''){
+        alert('ведите значение')
+    }else {
+        return input.value
+    }
+
 };
 
 document.querySelector('.btn')
         .addEventListener('click', () => {
-            showBasket('.bask__btn')
+            if (myClick()){
+                showBasket('.bask__btn')
+            }
+
         });
 
 function showBasket (container) {
@@ -27,16 +35,19 @@ document.addEventListener('scroll', scrollAdd);
 function scrollAdd () {
     let seeScroll = document.documentElement.clientHeight;
     let fullScroll = document.documentElement.scrollHeight;
+    let allPage = window.pageYOffset
 
     let partOffSeeScroll = 6;
 
-    let maxPosForPositionScroll = fullScroll - seeScroll;
-    let positionForNextPage = maxPosForPositionScroll - (seeScroll/partOffSeeScroll);
-    if (window.pageYOffset > positionForNextPage){
+    let auxiliaryPart = Math.floor(seeScroll/partOffSeeScroll) ;
+    let pointForNextPage =  Math.floor(fullScroll - seeScroll - auxiliaryPart) ;
+    let a = pointForNextPage + partOffSeeScroll
+    if (allPage >= pointForNextPage && allPage >= a) {
         page++;
-        perPage++;
+        console.log(page)
         getBeers();
     }
+
 }
 
 function getBeers () {
@@ -50,11 +61,16 @@ function getBeers () {
     //        console.log(beerDat);
     //     cardRenders(beerData)
     // })
-        fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${perPage}&beer_name=${myClick()}`)
+        fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10&beer_name=${myClick()}`)
             .then(response => response.json())
             .then(beerSort => {
-             beerDat = [...beerSort];
+                if (page === 1){
+                    beerDat = [...beerSort];
+                }else {
+                    beerDat = [...beerSort,...beerDat];
+                }
             cardRenders();
+
         })
     }
 
@@ -77,14 +93,21 @@ cardsContainer.innerHTML = cardsRes;
 function addBeerToBask(id) {
     beerBasket = [...beerDat.filter(card => card.id === id), ...beerBasket];
     localStorage.setItem('tovar', JSON.stringify(beerBasket));
+    updateCount(++countBeer);
+    console.log(countBeer)
     cardBasketRenders();
 }
 
+function updateCount(value) {
+    document.querySelector('.text__count').innerHTML = value;
+}
 
 function deleteBeerFromBask(id) {
     beerBasket = beerBasket.filter(card => card.id !== id);
     localStorage.setItem('tovar', JSON.stringify(beerBasket));
-    beerBasket = [...cardBasketRenders(), ...beerBasket];
+    updateCount(--countBeer);;
+    beerBasket = [...beerBasket];
+    cardBasketRenders()
 }
 document.querySelector('.bask__btn')
         .addEventListener('click', () => {

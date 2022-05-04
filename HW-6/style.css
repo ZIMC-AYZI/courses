@@ -3,11 +3,11 @@ body {
     margin: 0;
     line-height: 15px;
     color: white;
-    height: 100vmax;
+    /*height: 100vmax;*/
     font-family: "Comic Sans MS";
     background:
             url("../imags/fon.jpg")
-            center repeat ;
+            repeat ;
     background-size: cover;
 }
 
@@ -84,11 +84,13 @@ h1,h2,h3 {
 
 .btn {
     width: 30px;
-    height: 26px;
+    height: 30px;
     border-radius: 0 5px 5px 0;
     border: 2px solid #fff ;
     background: chartreuse;
-    /*background: url("../imags/2.png") center no-repeat ;*/
+    cursor: pointer;
+
+    background: url("../imags/Search-icon.png") center no-repeat ;
 }
 
 /*   cards   */
@@ -187,6 +189,7 @@ h1,h2,h3 {
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 1s;
+    cursor: pointer;
 
 }
 .card-basket:hover .btn__delete,
@@ -217,7 +220,19 @@ h1,h2,h3 {
     background:
             url("../Imags/1.png") center no-repeat beige;
     display: none;
+    cursor: pointer;
 }
+
+.count {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+    border: 5px ;
+    left: -5px;
+    top: -5px;
+}
+
 
 .bask-card-container  {
 

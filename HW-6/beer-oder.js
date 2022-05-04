@@ -52,7 +52,8 @@ beerBasket = JSON.parse(localStorage.getItem('tovar'));
 function deleteBeer(id) {
     beerBasket = beerBasket.filter(card => card.id !== id);
     localStorage.setItem('tovar', JSON.stringify(beerBasket));
-    beerBasket = [...cardRender(), ...beerBasket];
+    beerBasket = [...beerBasket];
+    cardRender()
 }
 
 function cardRender() {
