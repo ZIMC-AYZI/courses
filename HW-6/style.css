@@ -189,9 +189,9 @@ h1,h2,h3 {
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 1s;
-    cursor: pointer;
-
 }
+
+
 .card-basket:hover .btn__delete,
 .cards:hover .btn__add {
     visibility: visible;
@@ -235,7 +235,6 @@ h1,h2,h3 {
 
 
 .bask-card-container  {
-
     width:35%;
     height: 90%;
     overflow: auto;
@@ -246,7 +245,6 @@ h1,h2,h3 {
     background-color: rgba(0, 0, 0, .6);
     display: none;
     opacity: 1;
-    /*visibility: hidden;*/
 }
 
 .card-basket-container {
@@ -264,12 +262,12 @@ h1,h2,h3 {
     transition: transform 1s;
     background-color: #934f62;
     left: 6%;
-/*visibility: hidden;*/
 }
 
 .btn__delete {
     position: absolute;
     left: 120px;
+    top: 50px;
     visibility: hidden;
     width: 50px;
     height: 50px;
@@ -279,15 +277,18 @@ h1,h2,h3 {
     background-repeat: no-repeat;
     background-position: center;
     transition: transform 1s;
-
-
+    /*display: none;*/
 }
+
+/*}*/
+.cards:hover .btn__delete,
 .card-basket:hover .btn__delete {
     visibility: visible;
     transform: translate3d(40px, 0px, 0px);
 }
 
 .btn-oder {
+
     width: 80%;
     padding: 30px;
     margin-left: 10%;
@@ -303,5 +304,4 @@ h1,h2,h3 {
     top: 0;
     left: 0;
     z-index: 15;
-    /*opacity: 0.99;*/
 }
