@@ -1,0 +1,307 @@
+body {
+    width: 1100px;
+    margin: 0;
+    line-height: 15px;
+    color: white;
+    /*height: 100vmax;*/
+    font-family: "Comic Sans MS";
+    background:
+            url("../imags/fon.jpg")
+            repeat ;
+    background-size: cover;
+}
+
+h1,h2,h3 {
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* Intro */
+
+.intro {
+    width: 100%;
+}
+
+/*  Headr  */
+
+.header {
+    width: 100%;
+    position: absolute;
+    top:30px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav {
+    font-size: 18px;
+    text-shadow: blue 4px 4px 4px ;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #fff;
+}
+
+.nav__link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 2s ease-out;
+
+    vertical-align: top;
+    margin: 0 15px;
+
+}
+
+.nav__link:hover {
+    color: lightseagreen;
+}
+.input  {
+    display: flex;
+    background: bisque;
+
+}
+.input__value {
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    outline: none;
+
+}
+
+.btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 0 5px 5px 0;
+    border: 2px solid #fff ;
+    background: chartreuse;
+    cursor: pointer;
+
+    background: url("../imags/Search-icon.png") center no-repeat ;
+}
+
+/*   cards   */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 50px 50px;
+    position: relative;
+    margin-top: 50px;
+}
+
+.cards {
+    width: 140px;
+    height: 300px;
+    position: relative;
+    transition: transform 1s;
+    /*background-color: #934f62;*/
+    /*background-image: linear-gradient();*/
+    background: rgb(96,51,209);
+    background: linear-gradient(90deg, rgba(96,51,209,1) 0%,
+    rgba(50,42,200,0.8995973389355743) 20%, rgba(0,212,255,1) 80%);
+
+}
+
+.cards:hover {
+    width: 85%;
+    background-color: darkcyan;
+}
+
+.imag {
+    width: 100px;
+    height: 240px;
+    position: absolute;
+    left: 70px;
+    top: 10px;
+}
+
+.name {
+    position: absolute;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 4px #0000;
+}
+
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+    position: absolute;
+    left: 23px;
+    top: 235px;
+    white-space: pre;
+    transition: transform 1s;
+
+}
+.description:hover {
+    transform: translate3d(-35px, -200px, 0px);
+    width: 230px;
+
+    padding: 1px;
+    white-space: inherit;
+    overflow: visible;
+    font-size: 16px;
+    font-weight: normal;
+    color: white;
+    letter-spacing: 1px;
+    text-align: center;
+    word-spacing: 2px;
+    text-shadow: #cccccc -17px -8px 6px;
+    background: black ;
+    z-index: 1;
+}
+
+.abv {
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    color: chartreuse;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px #0000;
+}
+
+.btn__add {
+    position: absolute;
+    left: 120px;
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 12px;
+    background-image: url("../imags/2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 1s;
+}
+
+
+.card-basket:hover .btn__delete,
+.cards:hover .btn__add {
+    visibility: visible;
+    transform: translate3d(40px, 0px, 0px);
+}
+
+
+/*  Bask */
+
+
+.bask-btn-container  {
+    width: 150px;
+    position: sticky;
+    bottom: 10px;
+    left: calc(90% - 75px) ;
+
+}
+
+.bask__btn {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    bottom: 30px;
+    right: 50px;
+    border: 2px double cyan;
+    background:
+            url("../Imags/1.png") center no-repeat beige;
+    display: none;
+    cursor: pointer;
+}
+
+.count {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: aqua;
+    border: 5px ;
+    left: -5px;
+    top: -5px;
+}
+
+
+.bask-card-container  {
+    width:35%;
+    height: 90%;
+    overflow: auto;
+    position: fixed;
+    z-index: 25;
+    top: 10%;
+    right: 5px;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+    opacity: 1;
+}
+
+.card-basket-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 25px 25px;
+    position: relative;
+}
+
+.card-basket  {
+    width: 140px;
+    height: 300px;
+    position: relative;
+    transition: transform 1s;
+    background-color: #934f62;
+    left: 6%;
+}
+
+.btn__delete {
+    position: absolute;
+    left: 120px;
+    top: 50px;
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 12px;
+    background-image: url("../imags/del.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 1s;
+    /*display: none;*/
+}
+
+/*}*/
+.cards:hover .btn__delete,
+.card-basket:hover .btn__delete {
+    visibility: visible;
+    transform: translate3d(40px, 0px, 0px);
+}
+
+.btn-oder {
+
+    width: 80%;
+    padding: 30px;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
