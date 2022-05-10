@@ -43,8 +43,6 @@ function scrollAdd () {
     let auxiliaryPart = Math.floor(seeScroll/partOffSeeScroll) ;
     let pointForNextPage =  Math.floor(fullScroll - seeScroll - auxiliaryPart) ;
     if (allPage >= pointForNextPage) {
-        page++;
-        console.log(page);
         getBeers();
     }
 
@@ -66,6 +64,7 @@ function getBeers (isSelected = false) {
             .then(beerSort => {
                 beerDat = isSelected ? beerSort : [...beerDat,...beerSort];
             cardRenders();
+
         })
 }
 
