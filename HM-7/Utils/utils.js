@@ -15,11 +15,11 @@ export function createElement(template) {     // функциф сoздающа�
 export function renderElement(container, element, append_position = APPEND_POSITIONS.IN_THE_START) {
     switch (append_position) {
         case APPEND_POSITIONS.IN_THE_START: {
-            container.append(element);
+            container.prepend(element);
             break;
         }
         case APPEND_POSITIONS.IN_THE_END: {
-            container.prepend(element);
+            container.append(element);
             break;
         }
     }
