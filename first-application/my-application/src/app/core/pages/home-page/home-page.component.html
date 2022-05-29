@@ -1,0 +1,15 @@
+<div class="home-page">
+  <div class="user">
+    <p class="user-info">name: {{ user.name }}</p>
+    <p class="user-info">surname: {{ user.surname }}</p>
+    <p class="user-info">email: {{ user.email }}</p>
+  </div>
+
+  <div class="home-page-footer">
+    <button mat-raised-button
+            color="primary"
+            (click)="logOut()">
+      LogOut
+    </button>
+  </div>
+</div>

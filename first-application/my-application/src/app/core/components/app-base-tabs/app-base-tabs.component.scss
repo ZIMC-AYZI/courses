@@ -1,0 +1,49 @@
+
+.tabs-wrapper {
+  display: flex;
+
+  & .tabs-item {
+    cursor: pointer;
+    text-align: center;
+
+    &-wrapper {
+      margin-right: 30px;
+      transition: all .2s linear;
+      white-space: nowrap;
+
+      &__title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 800;
+
+        color: #D2D9E6;
+      }
+    }
+
+    &.active {
+      pointer-events: none;
+
+      & .tabs-item-wrapper {
+        cursor: default;
+
+        & .tabs-item-wrapper {
+          &__title {
+            position: relative;
+            color: #ffffff;
+            border-bottom: 2px solid #214082;
+
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: -12px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

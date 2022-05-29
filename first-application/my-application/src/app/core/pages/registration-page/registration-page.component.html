@@ -1,0 +1,22 @@
+<div class="registration">
+  <div class="form">
+
+    <div class="form-block"
+         *ngFor="let control of keys(registrationForm.controls)">
+      <div class="form-block-label">
+        {{ control }}
+      </div>
+      <div class="form-block-input">
+        <input [type]="control !== ('password' && 'email') ? 'text' : control" placeholder="enter your {{ control }}" [formControl]="registrationForm.controls[control] | getControl">
+      </div>
+    </div>
+
+  </div>
+
+  <button mat-raised-button
+          color="primary"
+          [disabled]="registrationForm.invalid"
+          (click)="registration()">
+    Registration
+  </button>
+</div>

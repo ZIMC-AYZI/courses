@@ -1,0 +1,27 @@
+.home-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & .header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+
+    & ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      & li {
+        margin-right: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

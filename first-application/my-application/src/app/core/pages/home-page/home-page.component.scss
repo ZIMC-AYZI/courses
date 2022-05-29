@@ -1,0 +1,29 @@
+.home-page {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 100px;
+  margin: 0 auto;
+
+  & .user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-info {
+      margin-bottom: 5px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 28px;
+      color: #214082;
+      border-bottom: 1px solid #214082;
+      border-radius: 5px;
+    }
+  }
+
+  &-footer {
+
+  }
+}

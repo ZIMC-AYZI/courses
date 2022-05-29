@@ -1,0 +1,8 @@
+<div class="nav-bar"
+     *ngIf="!hidePanel">
+  <div class="nav-bar-tabs">
+    <app-base-tabs [tabs]="data"
+                   (currentTab)="onChangeTab($event)">
+    </app-base-tabs>
+  </div>
+</div>

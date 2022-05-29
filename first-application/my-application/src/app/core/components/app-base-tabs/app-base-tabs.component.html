@@ -1,0 +1,12 @@
+<div class="tabs-wrapper">
+  <div *ngFor="let tab of tabs"
+       class="tabs-item"
+       [class]="{'active': tab.active}"
+       (click)="onSelectTab(tab)">
+    <div class="tabs-item-wrapper">
+      <p class="tabs-item-wrapper__title">
+        {{tab.title}}
+      </p>
+    </div>
+  </div>
+</div>
