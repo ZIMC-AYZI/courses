@@ -37,6 +37,11 @@ export class AppComponent implements OnInit {
               title: 'Home Page',
               url: appRoutes.homePage.routerPath,
               active: !!this.router.url.match(appRoutes.homePage.routerPath)
+            },
+            {
+              title: 'History',
+              url: appRoutes.history.routerPath,
+              active: !!this.router.url.match(appRoutes.history.routerPath)
             }
           ]
         } else {

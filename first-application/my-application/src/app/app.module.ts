@@ -11,13 +11,17 @@ import { RegistrationPageComponent } from './core/pages/registration-page/regist
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from './core/pipes/get-control/get-control.module';
 import { MatButtonModule } from '@angular/material/button';
+import {InputModule} from "./core/components/input/input.module";
+import { HistoryComponent } from './core/pages/history/history.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { MatButtonModule } from '@angular/material/button';
     NavbarModule,
     ReactiveFormsModule,
     GetControlModule,
-    MatButtonModule
+    MatButtonModule,
+    InputModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

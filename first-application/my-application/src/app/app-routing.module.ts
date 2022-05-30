@@ -4,6 +4,7 @@ import { LoginPageComponent } from './core/pages/login-page/login-page.component
 import { RegistrationPageComponent } from './core/pages/registration-page/registration-page.component';
 import { appRoutes } from './core/constants/routes';
 import { HomePageComponent } from './core/pages/home-page/home-page.component';
+import {HistoryComponent} from "./core/pages/history/history.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   {
     path: appRoutes.homePage.routerPath,
     component: HomePageComponent
+  },  {
+    path: appRoutes.history.routerPath,
+    component: HistoryComponent
   },
   {
     path: '**',

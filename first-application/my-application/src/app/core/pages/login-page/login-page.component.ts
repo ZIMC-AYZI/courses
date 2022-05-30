@@ -12,9 +12,12 @@ import { appRoutes } from '../../constants/routes';
 export class LoginPageComponent implements OnInit {
   public emailControl!: FormControl;
   public passwordControl!: FormControl;
+  public place = 'password';
+  public zero = 'password';
+
 
   constructor(
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
