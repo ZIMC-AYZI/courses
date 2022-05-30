@@ -1,0 +1,132 @@
+.main_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container_one {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.container_two {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input_name {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_surname {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_phone_number {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_second_name {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.make_order {
+    margin-top: 40px;
+    width: 120px;
+    height: 50px;
+    border-radius: 15px;
+    border-color: black;
+}
+
+.local__stash__container {
+    width: 100%;
+    height: 1200px;
+    background: yellow;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.local_card {
+    position: relative;
+    width: 100px;
+    border-radius: 12px;
+    margin-left: 53px;
+    margin-top: 40px;
+
+}
+
+.local_card__name__stash{
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: black;
+    width: 70%;
+}
+.local_card__description__stash{
+    top: 35%;
+    left: 100%;
+    position: absolute;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.04em;
+
+}
+
+.local_picture__stash {
+    position: relative;
+    width: 60px;
+    height: 150px;
+    border-radius: 12px;
+    margin-left: 53px;
+    margin-top: 40px;
+}
+
+.local__remove {
+    position: absolute;
+    right: 50%;
+    top: 20%;
+
+}

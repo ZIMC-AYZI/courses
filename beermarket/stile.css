@@ -1,7 +1,12 @@
 body {
     background-image: url('wallpaperbetter.com_1920x1080.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-left: 30px;
+
 
 }
+
 .container {
     width: 100%;
     height: 80%;
@@ -9,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+
 
 }
 
@@ -19,50 +25,188 @@ body {
 
 
 }
+
 .btn-search {
     width: 45px;
-    height: 21px;
-    margin-left: -75%;
+    height: 34px;
+    margin-left: -78%;
     margin-top: 50px;
     position: absolute;
-
+    display: flex;
 
 }
+
 
 .btn-stash {
     margin-top: 40px;
     width: 80px;
-    height: 40px ;
+    height: 40px;
     margin-left: 90%;
 }
+
 .input-search {
-    width: 200px;
     position: absolute;
+    margin-left: -90%;
     margin-top: 50px;
+    width: 160px;
+    height: 30px;
+
+
+}
+
+.container {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 451px;
+    border-radius: 12px;
+    margin-left: 53px;
+    margin-top: 40px;
+}
+
+
+.card-container {
+    width: 178px;
+    height: 251px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 178px);
+    grid-column-gap: 43px;
+    grid-row-gap: 3em;
+    background: none;
+
 }
 
 .card__name {
     position: absolute;
     left: 9.43%;
     right: 46.7%;
-    top: 6.41%;
     bottom: 85.9%;
+    top: 90%;
     font-style: normal;
     font-weight: 400;
     font-size: 19px;
     line-height: 24px;
     letter-spacing: -0.04em;
-    color: #FFFFFF;
+    color: black;
+    width: 70%;
+}
+
+.picture {
+    width: 90%;
+    height: 90%;
+    margin-left: 3.77%;
+    margin-top: 2.56%;
+    border-radius: 10px;
+}
+
+.add {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: white;
+    margin-left: -89%;
+    margin-top: 10%;
+    font-size: 20px;
+    opacity: 0;
 
 
 }
 
-.card__description {
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+}
+
+.stash-container {
     position: absolute;
-    left: 9.43%;
-    right: 31.13%;
-    top: 86.54%;
-    bottom: 6.41%;
+    width: 400px;
+    height: 800px;
+    background: white;
+    display: block;
+    margin-top: 5%;
+    margin-left: 75.5%;
+}
+
+.card-wrapper {
+    width: 100%;
+    height: 95%;
+    background: yellow;
+    position: absolute;
+
+
+}
+
+.close-stash {
+    width: 100px;
+    height: 35px;
+    margin-top: 761px;
+    margin-left: 60%;
+    position: absolute;
+}
+
+.create-order {
+    width: 100px;
+    height: 35px;
+    margin-top: 761px;
+    margin-left: 15%;
+    position: absolute;
+}
+
+.remove {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: white;
+    margin-left: -20%;
+    margin-top: 10%;
+    font-size: 20px;
+    opacity: 0;
+}
+
+.remove_stash {
+    position: absolute;
+    background: white;
+}
+
+.card:hover .add {
+    opacity: 1;
+}
+
+.card:hover .remove {
+    opacity: 1;
+}
+
+.card__name{
+    font-style: normal;
+    font-size: 20px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    color: black;
+    width: 70%;
+}
+
+.card__description{
+    position: absolute;
+    right: 10%;
+    top: 90%;
     font-style: normal;
     font-weight: 500;
     font-size: 17px;
@@ -70,13 +214,48 @@ body {
     display: flex;
     align-items: flex-end;
     letter-spacing: -0.04em;
-    color: #FFFFFF;
 }
 
-.image_url {
-    width: 165px;
-    height: 195px;
+.card__name__stash {
+    position: absolute;
+    top: -20%;
+    left: 140%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: black;
+    width: 70%;
+}
+.card__description__stash {
+    top: 60%;
+    left: 140%;
+    position: absolute;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.04em;
+
+}
+
+.picture__stash {
+    width: 100%;
+    height: 100%;
     margin-left: 3.77%;
     margin-top: 2.56%;
-    border-radius: 10px;
+    position: absolute;
+
+}
+
+.card__stash {
+    position: relative;
+    width: 40px;
+    height: 100px;
+    border-radius: 12px;
+    margin-left: 53px;
+    margin-top: 40px;
 }
