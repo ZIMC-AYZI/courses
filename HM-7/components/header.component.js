@@ -17,7 +17,22 @@ export class HeaderComponent extends AbstractComponent{
 <button class="cascad">sorted</button>
 <p>create new task</p>
 <input type="text">
-<button>+</button>
+<button class="add-btn">+</button>
 </header>`)
+    }
+
+    _afterCreateElement() {
+        //const addBtn = this._element.querySelector('.add-btn');
+        document.addEventListener('click', (e) =>{
+            if (e.target.classList.contains('add-btn')){
+                const inputEl = this._element.querySelector('input');
+
+                window.taskService.setNewTask(inputEl.value);
+                console.log(taskService._task)
+            }
+
+        })
+
+
     }
 }
