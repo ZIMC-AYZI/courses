@@ -34,7 +34,7 @@ function stashRender() {
 <p class="local_card__name__stash">${beer.name}</p>
 <p class="local_card__description__stash">${beer.abv}</p>
 <img class="local_picture__stash" src="${beer.image_url}" alt="">
-<button onclick="removeCard(${beer.id})" class="local__remove">-</button>
+<button onclick="removeCard(${beer.id})" class="local__remove">Remove</button>
 </div>`
 
     });
