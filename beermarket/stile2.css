@@ -1,0 +1,178 @@
+.main_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container_one {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.container_two {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input_name {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_surname {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_phone_number {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.input_second_name {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: black;
+}
+
+.button_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.make_order {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 50px;
+    border-color: black;
+    text-decoration: none;
+    display: inline-block;
+    /*padding: 12px 40px;*/
+    border-radius: 30px;
+    background-image: linear-gradient(45deg, #4ad753 100%, #38de45 40%, #1c7820 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+.make_order:hover {
+    box-shadow: 0 8px 12px rgba(36, 193, 33, 0.91);
+    background-position: 0 0;
+}
+
+
+.local__stash__container {
+    width: 100%;
+    height: 1200px;
+    background: yellow;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.local_card {
+    position: relative;
+    margin: 40px;
+    width: 40px;
+    height: 100px;
+    border-radius: 12px;
+
+}
+
+.local__card__container {
+    width: 20px;
+    height: 50px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 178px);
+    grid-column-gap: 43px;
+    grid-row-gap: 3em;
+    background: none;
+}
+
+.local_card__name__stash {
+    position: absolute;
+    top: 95%;
+    right: 80%;    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: black;
+    width: 70%;
+}
+
+.local_card__description__stash {
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: -0.04em;
+
+}
+
+.local_picture__stash {
+    width: 100%;
+    height: 100%;
+    margin-left: 3.77%;
+    margin-top: 2.56%;
+    border-radius: 10px;
+}
+
+.local__remove {
+    position: absolute;
+    background: white;
+    left: 100%;
+    bottom: 80%;
+    width: 62px;
+    height: 22px;
+    border-radius: 12px;
+    font-size: 11px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    color: #524f4e;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.local__remove:hover {
+    background: red;
+    box-shadow: 0 15px 20px rgba(193, 80, 56, 0.4);
+    color: white;
+    transform: translateY(-7px);
+}
