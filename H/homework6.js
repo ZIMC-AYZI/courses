@@ -1,8 +1,8 @@
 const containerCard = document.querySelector('.container_card');
 const addBtn = document.querySelector('.add');
 const cardWrapper = document.querySelector('.card_wrapper');
-const name = ['Hyilysha','Degan','Zalypa','Ebat','Kek'];
-const description = ['Kirill','Ochko','Liha','Vladik','Opachki']
+const name = ['Smotri','Vclube','Lays','Lyks','Kek'];
+const description = ['Krasota','Chiksy','Crab','Paprika','Opachki']
 let arrCards = [
     {
         name: 'Card Name',
@@ -35,16 +35,16 @@ function getNewCard() {
 function cardRender() {
     let result = '';
     for (let i = 0; i < arrCards.length; i++) {
-        result += `<div class="container_card">
-<div class="card">
+        result += `<div class="card"> 
+<div class="background"></div>
 <p class="card_name">${arrCards[i].name}</p>
 <p class="card_description">${arrCards[i].description}</p>
 <img class='image' src="https://random.imagecdn.app/500/500" alt="">
 <button onclick="deleteCard(${arrCards[i].id})" class="btn delete"></button>
-</div></div>`
+</div>`
     }
 
-    cardWrapper.innerHTML = result;
+    containerCard.innerHTML = result;
 }
 
 function deleteCard(id) {
