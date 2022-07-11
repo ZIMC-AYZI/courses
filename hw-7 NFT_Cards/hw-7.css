@@ -1,9 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
-body{
-    /*background: linear-gradient(black,gray);*/
-
-
-}
 .container{
     margin: 0 auto;
     min-height: 100vh;
@@ -11,24 +6,11 @@ body{
     background-color: black;
     font-family:'Space Grotesk', sans-serif;
 }
-.flex-wrapper{
-    /*display: flex;*/
-    /*min-width: 100vw;*/
-    /*justify-content: center;*/
-}
-.wrapper{
-    /*display: flex;*/
-    /*justify-content: center;*/
-}
-.items{
-
-}
 
 .line {
     display: flex;
     justify-content: space-between;
     height: 220px;
-    /*border: solid 1px white;*/
     margin-bottom: 5px;
 }
 .item{
@@ -64,7 +46,10 @@ body{
     border-radius:30px;
     margin: 110px 0 0 238px;
 }
-
+.button:hover{
+    transition: 200ms ease-in;
+    transform: scale(1.04);
+}
 .button{
     display: flex;
     align-items: center;
@@ -121,8 +106,10 @@ body{
 }
 
 .cards{
-display: flex;
+    display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 1400px;
 }
 
 .background-card:hover {
@@ -154,10 +141,7 @@ display: flex;
     box-sizing: border-box;
     height: 194.69px;
     width: 164.57px;
-    /*background-color: #214082;*/
     border-radius: 11px;
-    /*margin: 6.44px 6.72px 49.88px 6.72px;*/
-    /*padding: 5px 0 0 5px;*/
 }
 
 .description{
