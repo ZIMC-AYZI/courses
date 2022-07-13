@@ -125,8 +125,9 @@
 }
 .move-element{
     position: absolute;
-    top:0;
-    width: 181px;
+    top:1px;
+    left: 1px;
+    width: 178px;
     height:253px;
     background-color: white;
     border-radius: 16px;
@@ -136,7 +137,13 @@
     transform: translateY(33px);
 }
 .btn{
-    margin-top:220px;
+    position: absolute;
+    top: 89%;
+    left: 75px;
+    background-image: url("Icons.png");
+    border: none;
+    height: 25px;
+    width: 25px;
 }
 .btn:hover{
     cursor: pointer;
@@ -156,7 +163,7 @@
     border-radius: 11px;
     position: absolute;
     top:6px;
-    left:6.72px;
+    left:6px;
 }
 p{
     color: white;
@@ -171,84 +178,3 @@ p{
     top: 70%;
     left: 5px;
 }
-/*.fake-border{*/
-/*    height: 283px;*/
-/*    width: 180px;*/
-/*    border: white solid 1px;*/
-/*}*/
-/*.btn{*/
-/*    background-image: url("Icons.png");*/
-/*    background-repeat: no-repeat;*/
-/*    background-position: bottom;*/
-/*    height: 25px;*/
-/*    width: 180px;*/
-/*    border: none;*/
-/*    visibility: hidden;*/
-/*    transition: transform 1s;*/
-/*}*/
-
-/*.move-block{*/
-/*    display: none;*/
-/*    !*position: absolute;*!*/
-/*    top: 0;*/
-/*    height: 100px;*/
-/*    width: 179px;*/
-/*    border-radius: 16px;*/
-/*    background-color: blue;*/
-/*}*/
-
-/*.border{*/
-/*    !*position: absolute;*!*/
-/*    !*top: 0;*!*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    height:253px;*/
-/*    width:180px;*/
-/*    border-radius: 16px;*/
-/*    background: linear-gradient(to left,whitesmoke, gray);*/
-/*}*/
-/*.card{*/
-/*    box-sizing: border-box;*/
-/*    height: 251px;*/
-/*    width: 178px;*/
-/*    background-color: #3e3e3e;*/
-/*    border-radius: 15px;*/
-/*    padding:6.5px ;*/
-/*    position: relative;*/
-/*}*/
-
-/*.image{*/
-
-/*    box-sizing: border-box;*/
-/*    height: 194.69px;*/
-/*    width: 164.57px;*/
-/*    border-radius: 11px;*/
-/*}*/
-
-/*.description{*/
-/*    position: absolute;*/
-/*    box-sizing: border-box;*/
-/*    height: 251px;*/
-/*    width: 178px;*/
-/*    top:0;*/
-/*    padding: 7px 0 5px 5px;*/
-/*}*/
-/*.deck-up{*/
-/*    margin: 0 0 0 2px;*/
-/*    font-size:20px;*/
-/*    color: white;*/
-/*}*/
-/*.deck-down{*/
-/*    color: white;*/
-/*    font-size: 20px;*/
-/*}*/
-/*.down1{*/
-/*    margin: 130px 0 0 4px;*/
-/*}*/
-/*.down2{*/
-/*    margin: 0 0 0 4px;*/
-/*}*/
-
-
-
