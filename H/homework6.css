@@ -23,6 +23,13 @@ body {
     margin-top: 301px;
     border-radius: 32px;
     margin-bottom: 291px;
+    cursor: pointer;
+
+}
+.btn.add:active{
+    background-color: slategray;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .box {
@@ -112,31 +119,37 @@ body {
     right: 120px;
 }
 
-.card_wrapper {
-    display: grid;
-    grid-template-columns: 222px 222px 222px 222px 222px 222px;
-    grid-column-gap: 43px;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
 .container_card {
+
+    background-color: #3E3E3E;
+    border-radius: 12px;
     width: 178px;
     height: 251px;
     position: relative;
-    background-color: #3E3E3E;
-    border-radius: 12px;
+    display: grid;
+    grid-row-gap: 6em;
+    align-items: center;
+    margin-left: 100px;
+    grid-template-columns: 222px 222px 222px 222px 222px 222px;
+    grid-column-gap: 73px;
 }
 
 .card {
-    position: relative;
     width: 178px;
-    height: 251px;
-    /*margin-top: 91px;*/
-    border-radius: 12px;
     background-color: #3E3E3E;
-    /*margin-left: 53px;*/
+    position: relative;
+    height: 251px;
+    border-radius: 12px;
+
+}
+.background {
+    position: absolute;
+    width: 178px;
+    background-color: white;
+    height: 291px;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
 
 }
 
@@ -188,13 +201,24 @@ body {
     margin-left: 42%;
     margin-top: 50px;
     opacity: 0;
-
+    cursor: pointer;
+    background-image: url("icons.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 
-.container_card:hover{
-    border-bottom: 35px solid white;
+.btn.delete:active{
+    background-color: slategray;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
 
-.container_card:hover .btn.delete {
+
+.card:hover .background{
+    opacity: 1;
+}
+
+.card:hover .btn.delete {
     opacity: 1;
 }
