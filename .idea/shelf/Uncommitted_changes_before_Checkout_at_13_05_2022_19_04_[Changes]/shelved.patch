@@ -1,0 +1,25 @@
+Index: beermarket/js.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>const beerContainer = document.querySelector('.beer-container');\r\nconst basketContainer = document.querySelector('.basket-container');\r\nconst input = document.querySelector('.input');\r\nlet beerData = [];\r\nlet basketData = [];\r\nlet page = 1;\r\n\r\nif (localStorage.getItem('saveData')) {\r\n    basketData = JSON.parse(localStorage.getItem('saveData'))\r\n}\r\n\r\nbasketWindow();\r\n\r\nfunction checkPosition() {\r\n    const height = document.body.offsetHeight;\r\n    const screenHeight = window.innerHeight;\r\n    const scrolled = window.scrollY;\r\n    const threshold = height - screenHeight / 4;\r\n    const position = scrolled + screenHeight;\r\n\r\n    if (position >= threshold) {\r\n        page += 1;\r\n        getBeer()\r\n    }\r\n}\r\n\r\n;(() => {\r\n    window.addEventListener(\"scroll\", checkPosition);\r\n    window.addEventListener(\"resize\", checkPosition)\r\n})();\r\n\r\nfunction getBeer(resetArray = false) {\r\n\r\n    fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10&beer_name=${searchName()}`)\r\n        .then((response) => response.json())\r\n        .then(beers => {\r\n            beerData = resetArray ? beers : [...beerData, ...beers];\r\n            beerRender();\r\n        });\r\n\r\n}\r\n\r\nfunction searchName() {\r\n\r\n    return input.value;\r\n\r\n}\r\n\r\nfunction beerRender() {\r\n    let result = '';\r\n\r\n    beerData.forEach((beer) => {\r\n\r\n        result += `<div class=\"card-wrapper\">\r\n<div class =\"card\">\r\n<div class=\"card-left\"><img class=\"img\" src=\"${beer.image_url}\"></div>\r\n<div class=\"card-right\">\r\n<p class=\"name\">${beer.name}</p>\r\n<p class=\"description\">${beer.tagline}</p>\\\r\n</div>\r\n</div>\r\n${basketData.filter(item => beer.id === item.id).length ? `<button onclick=\"delBeer(${beer.id})\" class=\"btn-del\" title=\"Удалить из корзины\"></button>` : `<button onclick=\"addBasket(${beer.id})\" class=\"btn-add\" title=\"Добавить в корзину\"></button>`}\r\n</div>`\r\n    });\r\n\r\n    beerContainer.innerHTML = result;\r\n\r\n}\r\n\r\nfunction basketWindow() {\r\n    let updateButton = document.getElementById('openDetails');\r\n    let cancelButton = document.getElementById('cancel');\r\n    let container = document.getElementById('dialog');\r\n    let resetButton = document.getElementById('reset');\r\n\r\n    updateButton.addEventListener('click', function () {\r\n        container.showModal();\r\n        basketRender()\r\n    });\r\n\r\n    cancelButton.addEventListener('click', function () {\r\n        container.close();\r\n    });\r\n\r\n    resetButton.addEventListener('click', () => {\r\n        basketData = [];\r\n        basketRender();\r\n        localStorage.clear();\r\n        beerRender()\r\n    });\r\n\r\n\r\n\r\n}\r\n\r\nfunction addBasket(id) {\r\n\r\n    const beerSelect = beerData.find((el) => el.id === id);\r\n    basketData = [...basketData, beerSelect];\r\n    beerRender();\r\n    localStorage.setItem('saveData', JSON.stringify(basketData));\r\n\r\n}\r\n\r\nfunction delBeer(id) {\r\n    basketData = basketData.filter(card => card.id !== id);\r\n    localStorage.setItem('saveData', JSON.stringify(basketData));\r\n    basketRender();\r\n    beerRender()\r\n}\r\n\r\nfunction basketRender() {\r\n    let result = '';\r\n\r\n    basketData.forEach((beer) => {\r\n\r\n        result += `<div class=\"card-wrapper\">\r\n<div class =\"card\">\r\n<div class=\"card-left\"><img class=\"img\" src=\"${beer.image_url}\"></div>\r\n<div class=\"card-right\">\r\n<p class=\"name\">${beer.name}</p>\r\n<p class=\"description\">${beer.tagline}</p>\r\n</div>\r\n</div>\r\n<button onclick=\"delBeer(${beer.id})\" class=\"btn-del\" title=\"Удалить из корзины\"></button>\r\n</div>`\r\n    });\r\n\r\n    basketContainer.innerHTML = result;\r\n\r\n}\r\n\r\n// onscroll = function() {\r\n//     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)\r\n//         alert('Конец прокрутки');\r\n// };
+===================================================================
+diff --git a/beermarket/js.js b/beermarket/js.js
+--- a/beermarket/js.js	
++++ b/beermarket/js.js	
+@@ -84,8 +84,8 @@
+ 
+     resetButton.addEventListener('click', () => {
+         basketData = [];
+-        basketRender();
+         localStorage.clear();
++        basketRender();
+         beerRender()
+     });
+ 
+@@ -133,4 +133,4 @@
+ // onscroll = function() {
+ //     if(window.scrollY+1 >= document.documentElement.scrollHeight-document.documentElement.clientHeight)
+ //         alert('Конец прокрутки');
+-// };
+\ No newline at end of file
++// };
